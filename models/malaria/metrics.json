@@ -1,0 +1,150 @@
+{
+  "model": "malaria",
+  "selected_algorithm": "random_forest",
+  "candidate_cv": {
+    "logistic_regression": {
+      "cv_roc_auc_mean": 0.5442,
+      "cv_roc_auc_sd": 0.1361
+    },
+    "random_forest": {
+      "cv_roc_auc_mean": 0.628,
+      "cv_roc_auc_sd": 0.2179
+    },
+    "xgboost": {
+      "cv_roc_auc_mean": 0.5447,
+      "cv_roc_auc_sd": 0.1931
+    }
+  },
+  "n_rows": 299,
+  "n_train": 224,
+  "n_test": 75,
+  "class_counts_all": {
+    "0": 29,
+    "1": 270
+  },
+  "class_counts_test": {
+    "0": 7,
+    "1": 68
+  },
+  "classes": [
+    "0",
+    "1"
+  ],
+  "task": "binary",
+  "features_used": 67,
+  "numeric_features": [
+    "Age",
+    "Weight",
+    "\u00b0C",
+    "median breaths/min IQR",
+    "Fr\u00e9quence du pouls (battements/m in \u00b1 SD)./ Pulse rate (mean beats/min \u00b1 SD) - S"
+  ],
+  "categorical_features": [
+    "Gender",
+    "temperature, Hyperpyrexia",
+    "Fever 48 hrs",
+    "Fever in the last 7 days",
+    "Type of Fever",
+    "Loss of Weight",
+    "headache",
+    "Nausea",
+    "Vomiting",
+    "Joint pain",
+    "Joint Swelling",
+    "Muscle pain",
+    "Chaist pain",
+    "Back pain / Rachiodynia",
+    "Consciousness trouble",
+    "Loss of appetite or Anorexia",
+    "Skin rash or Exanthema",
+    "Morbilliform rash",
+    "Bleeding",
+    "Rhinorrhea",
+    "Drowsiness or lethargy",
+    "Dizzy",
+    "stomac pain",
+    "Distension abdominale (Ventre gonfl\u00e9) (Abdominal Distension (Swelling Stomach)/ ",
+    "throat pain",
+    "Cough",
+    "Diarrhea",
+    "Retro-orbital pain",
+    "Headache",
+    "Shiver or cold sensation",
+    "Frequent Urination",
+    "Constipation",
+    "Oliguria",
+    "Frequent Urination (2)",
+    "Prostration",
+    "Icterus",
+    "Bleeding nose",
+    "Generalised or focal convulsion",
+    "Multiple convulsions",
+    "D\u00e9lire",
+    "impaired level of consciousness",
+    "Facial Swelling",
+    "Delirium/ Irrational Talking",
+    "Hemoglobinuria",
+    "Bitter taste in your Throat",
+    "Positive tourniquet test",
+    "Stiffness",
+    "Respiratory distress",
+    "Shock",
+    "Hepatomegaly",
+    "Heart failure or Myocarditis",
+    "Accumulation of fluid and respiratory distress",
+    "Spl\u00e9nom\u00e9galie mod\u00e9r\u00e9e",
+    "Septicemia",
+    "Sub-icterus",
+    "Lymphad\u00e9nopathie / Lymphadenopa thy",
+    "Diab\u00e8te",
+    "Hypertension art\u00e9rielle",
+    "Dr\u00e9panocytose",
+    "Arthrose",
+    "Astma",
+    "Household Dengue"
+  ],
+  "dropped_features": {
+    "Mua circumference": "92% missing or constant",
+    "Inflammation de conjonctivite": "0% missing or constant",
+    "Facial flushing": "0% missing or constant",
+    "Profuse sweating": "0% missing or constant",
+    "mean mmHg \u00b1 SD": "57% missing or constant",
+    "median secs IQR": "70% missing or constant",
+    "Maladie rhumatismale": "1% missing or constant",
+    "Maladie auto immune": "1% missing or constant",
+    "Allergies": "1% missing or constant",
+    "Cancer": "1% missing or constant",
+    "Leucopenia": "0% missing or constant"
+  },
+  "cv_folds": 5,
+  "seed": 42,
+  "versions": {
+    "scikit_learn": "1.6.1",
+    "xgboost": "3.4.1"
+  },
+  "train_seconds": 3.9,
+  "roc_auc": 0.6849,
+  "roc_auc_95ci": [
+    0.4789,
+    0.8788
+  ],
+  "pr_auc": 0.958,
+  "accuracy": 0.9067,
+  "balanced_accuracy": 0.5,
+  "sensitivity": 1.0,
+  "specificity": 0.0,
+  "ppv": 0.9067,
+  "npv": NaN,
+  "f1": 0.951,
+  "brier": 0.0963,
+  "confusion_matrix_threshold_0.5": {
+    "tn": 0,
+    "fp": 7,
+    "fn": 0,
+    "tp": 68
+  },
+  "decision_threshold": 0.5,
+  "positive_class": "1",
+  "status": "limited",
+  "status_reason": "Only 29 examples in the smallest class overall and 7 in the test set. Metrics are unstable; do not use for decisions."
+}

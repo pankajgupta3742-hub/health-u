@@ -1,0 +1,158 @@
+{
+  "model": "dengue_chikungunya",
+  "task": "multiclass",
+  "classes": [
+    "chikungunya",
+    "dengue",
+    "neither"
+  ],
+  "features": [
+    {
+      "name": "age_years",
+      "type": "numeric",
+      "default": 30.0,
+      "min": 0.0,
+      "max": 404.0
+    },
+    {
+      "name": "Fever",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    },
+    {
+      "name": "Myalgia",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    },
+    {
+      "name": "Headache",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    },
+    {
+      "name": "Rash",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    },
+    {
+      "name": "Vomiting",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    },
+    {
+      "name": "Nausea",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    },
+    {
+      "name": "Back pain",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    },
+    {
+      "name": "Conjunctivitis",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    },
+    {
+      "name": "Arthritis",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    },
+    {
+      "name": "Arthralgia",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    },
+    {
+      "name": "Petechiae",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    },
+    {
+      "name": "Tourniquet/lace test",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    },
+    {
+      "name": "Retro-orbital pain",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    },
+    {
+      "name": "Diabetes",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    },
+    {
+      "name": "Haematological disease",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    },
+    {
+      "name": "Liver disease",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    },
+    {
+      "name": "Kidney disease",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    },
+    {
+      "name": "Hypertension",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    },
+    {
+      "name": "Peptic ulcer",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    },
+    {
+      "name": "Autoimmune disease",
+      "type": "numeric",
+      "default": 9.0,
+      "min": 1.0,
+      "max": 9.0
+    }
+  ]
+}

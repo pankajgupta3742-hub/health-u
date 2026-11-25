@@ -1,0 +1,31 @@
+{
+  "model": "typhoid",
+  "task": "binary",
+  "classes": [
+    "0",
+    "1"
+  ],
+  "features": [
+    {
+      "name": "age_years",
+      "type": "numeric",
+      "default": 23.0,
+      "min": 0.0833333333333333,
+      "max": 90.0
+    },
+    {
+      "name": "Rickettsial infection suspected",
+      "type": "binary",
+      "default": 0.0
+    },
+    {
+      "name": "sex",
+      "type": "categorical",
+      "options": [
+        "male",
+        "female"
+      ],
+      "default": "male"
+    }
+  ]
+}

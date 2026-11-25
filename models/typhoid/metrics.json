@@ -1,0 +1,88 @@
+{
+  "model": "typhoid",
+  "selected_algorithm": "logistic_regression",
+  "candidate_cv": {
+    "logistic_regression": {
+      "cv_roc_auc_mean": 0.6423,
+      "cv_roc_auc_sd": 0.0567
+    },
+    "random_forest": {
+      "cv_roc_auc_mean": 0.4917,
+      "cv_roc_auc_sd": 0.0148
+    },
+    "xgboost": {
+      "cv_roc_auc_mean": 0.5711,
+      "cv_roc_auc_sd": 0.0406
+    }
+  },
+  "n_rows": 540,
+  "n_train": 405,
+  "n_test": 135,
+  "class_counts_all": {
+    "0": 462,
+    "1": 78
+  },
+  "class_counts_test": {
+    "0": 115,
+    "1": 20
+  },
+  "classes": [
+    "0",
+    "1"
+  ],
+  "task": "binary",
+  "features_used": 3,
+  "numeric_features": [
+    "age_years",
+    "Rickettsial infection suspected"
+  ],
+  "categorical_features": [
+    "sex"
+  ],
+  "dropped_features": {
+    "Widal O (TO) (log2 titre)": "excluded: label appears determined by these titres (see label_definition_check)",
+    "Widal H (TH) (log2 titre)": "excluded: label appears determined by these titres (see label_definition_check)",
+    "Widal AH (log2 titre)": "excluded: label appears determined by these titres (see label_definition_check)",
+    "Widal BH (log2 titre)": "excluded: label appears determined by these titres (see label_definition_check)",
+    "Widal OX2 (log2 titre)": "excluded: label appears determined by these titres (see label_definition_check)",
+    "Widal OXK (log2 titre)": "excluded: label appears determined by these titres (see label_definition_check)",
+    "Widal OX9 (log2 titre)": "excluded: label appears determined by these titres (see label_definition_check)",
+    "Widal A (log2 titre)": "excluded: label appears determined by these titres (see label_definition_check)",
+    "Widal M (log2 titre)": "excluded: label appears determined by these titres (see label_definition_check)"
+  },
+  "cv_folds": 5,
+  "seed": 42,
+  "versions": {
+    "scikit_learn": "1.6.1",
+    "xgboost": "3.4.1"
+  },
+  "train_seconds": 3.1,
+  "roc_auc": 0.5633,
+  "roc_auc_95ci": [
+    0.4213,
+    0.71
+  ],
+  "pr_auc": 0.2598,
+  "accuracy": 0.5926,
+  "balanced_accuracy": 0.5337,
+  "sensitivity": 0.45,
+  "specificity": 0.6174,
+  "ppv": 0.1698,
+  "npv": 0.8659,
+  "f1": 0.2466,
+  "brier": 0.2312,
+  "confusion_matrix_threshold_0.5": {
+    "tn": 71,
+    "fp": 44,
+    "fn": 11,
+    "tp": 9
+  },
+  "decision_threshold": 0.5,
+  "positive_class": "1",
+  "status": "limited",
+  "status_reason": "The 95% CI for ROC AUC includes 0.5 (chance). The model shows no reliable discrimination on this data and must not be used for decisions.",
+  "label_definition_check": {
+    "check": "depth-2 decision tree on Widal titres only, 5-fold CV ROC AUC",
+    "value": 1.0
+  }
+}

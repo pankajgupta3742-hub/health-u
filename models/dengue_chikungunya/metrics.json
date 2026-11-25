@@ -1,0 +1,122 @@
+{
+  "model": "dengue_chikungunya",
+  "selected_algorithm": "xgboost",
+  "candidate_cv": {
+    "logistic_regression": {
+      "cv_roc_auc_mean": 0.639,
+      "cv_roc_auc_sd": 0.0003
+    },
+    "random_forest": {
+      "cv_roc_auc_mean": 0.652,
+      "cv_roc_auc_sd": 0.0012
+    },
+    "xgboost": {
+      "cv_roc_auc_mean": 0.6679,
+      "cv_roc_auc_sd": 0.002
+    }
+  },
+  "n_rows": 149849,
+  "n_train": 112386,
+  "n_test": 37463,
+  "class_counts_all": {
+    "chikungunya": 7304,
+    "dengue": 95927,
+    "neither": 46618
+  },
+  "class_counts_test": {
+    "chikungunya": 1826,
+    "dengue": 23982,
+    "neither": 11655
+  },
+  "classes": [
+    "chikungunya",
+    "dengue",
+    "neither"
+  ],
+  "task": "multiclass",
+  "features_used": 21,
+  "numeric_features": [
+    "age_years",
+    "Fever",
+    "Myalgia",
+    "Headache",
+    "Rash",
+    "Vomiting",
+    "Nausea",
+    "Back pain",
+    "Conjunctivitis",
+    "Arthritis",
+    "Arthralgia",
+    "Petechiae",
+    "Tourniquet/lace test",
+    "Retro-orbital pain",
+    "Diabetes",
+    "Haematological disease",
+    "Liver disease",
+    "Kidney disease",
+    "Hypertension",
+    "Peptic ulcer",
+    "Autoimmune disease"
+  ],
+  "categorical_features": [],
+  "dropped_features": {
+    "sex": "0% missing or constant",
+    "pregnant": "0% missing or constant"
+  },
+  "cv_folds": 3,
+  "seed": 42,
+  "versions": {
+    "scikit_learn": "1.6.1",
+    "xgboost": "3.4.1"
+  },
+  "train_seconds": 20.3,
+  "roc_auc_macro_ovr": 0.6679,
+  "roc_auc_macro_95ci": [
+    0.6633,
+    0.6725
+  ],
+  "accuracy": 0.6423,
+  "balanced_accuracy": 0.3387,
+  "f1_macro": 0.2759,
+  "per_class": {
+    "chikungunya": {
+      "recall": 0.0,
+      "precision": 0.0,
+      "roc_auc_ovr": 0.7936
+    },
+    "dengue": {
+      "recall": 0.9914,
+      "precision": 0.6431,
+      "roc_auc_ovr": 0.5996
+    },
+    "neither": {
+      "recall": 0.0248,
+      "precision": 0.5827,
+      "roc_auc_ovr": 0.6104
+    }
+  },
+  "confusion_matrix": [
+    [
+      0,
+      1826,
+      0
+    ],
+    [
+      0,
+      23775,
+      207
+    ],
+    [
+      0,
+      11366,
+      289
+    ]
+  ],
+  "confusion_matrix_labels": [
+    "chikungunya",
+    "dengue",
+    "neither"
+  ],
+  "status": "research",
+  "status_reason": "Trained and evaluated on a public dataset. Not clinically validated."
+}

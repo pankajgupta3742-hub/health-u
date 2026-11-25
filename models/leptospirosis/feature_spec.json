@@ -1,0 +1,409 @@
+{
+  "model": "leptospirosis",
+  "task": "binary",
+  "classes": [
+    "0",
+    "1"
+  ],
+  "features": [
+    {
+      "name": "Age",
+      "type": "numeric",
+      "default": 44.0,
+      "min": 2.0,
+      "max": 87.0
+    },
+    {
+      "name": "Sex",
+      "type": "numeric",
+      "default": 1.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Chronicillness",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Possibleexposure",
+      "type": "numeric",
+      "default": 1.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Feveronset",
+      "type": "numeric",
+      "default": 1.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Headacheonset",
+      "type": "numeric",
+      "default": 1.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Musclepainonset",
+      "type": "numeric",
+      "default": 1.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Cnsuffusiononset",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Jaundiceonset",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Skinrashonset",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Oliguriaonset",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Anuriaonset",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "SOBonset",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Coughonset",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Haemoptasisonset",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Chestpainonset",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Nauseaonset",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Vomitingonset",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Diarrhoeaonset",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Bleedingonset",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Mucosalrashonset",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Prostrationonset",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Rigorsonset",
+      "type": "numeric",
+      "default": 1.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Photophobiaonset",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Chillsonset",
+      "type": "numeric",
+      "default": 1.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Muscletendernessonset",
+      "type": "numeric",
+      "default": 1.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Psychoticsymptomsonset",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Confusiononset",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Feverad",
+      "type": "numeric",
+      "default": 1.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Headachead",
+      "type": "numeric",
+      "default": 1.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Chillsad",
+      "type": "numeric",
+      "default": 1.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Rigorsad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Musclepainad",
+      "type": "numeric",
+      "default": 1.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Muscletendernessad",
+      "type": "numeric",
+      "default": 1.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Nauseaad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Vomitingadmission",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Cnsuffusionad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Skinrashad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Mucosalrashad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Prostrationad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Diarrhoeaad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "OliguriaAd",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Anuriaad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Jaundicead",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Hepatictendernessad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Hepatomegalyad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Spleenimegalyad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Lympadenopathyad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Photophobiaad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Neckstiffnessad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Psychoticsymptomsad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Confusionad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Coughad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Haemoptasisad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "SOBadd",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Chestpainad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "Bleedingad",
+      "type": "numeric",
+      "default": 2.0,
+      "min": 1.0,
+      "max": 2.0
+    }
+  ]
+}

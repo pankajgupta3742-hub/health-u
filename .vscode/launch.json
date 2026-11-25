@@ -1,0 +1,44 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug: API (backend)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": ["app.main:app", "--host", "127.0.0.1", "--port", "8000"],
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/backend/.venv/bin/python",
+      "windows": { "python": "${workspaceFolder}/backend/.venv/Scripts/python.exe" },
+      "envFile": "${workspaceFolder}/backend/.env",
+      "jinja": false,
+      "justMyCode": true
+    },
+    {
+      "name": "Debug: web app (npm run dev)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev",
+      "cwd": "${workspaceFolder}/frontend"
+    },
+    {
+      "name": "Debug: backend tests",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["-q", "tests"],
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/backend/.venv/bin/python",
+      "windows": { "python": "${workspaceFolder}/backend/.venv/Scripts/python.exe" },
+      "envFile": "${workspaceFolder}/backend/.env",
+      "justMyCode": true
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Run Health-U (API + web app)",
+      "configurations": ["Debug: API (backend)", "Debug: web app (npm run dev)"],
+      "stopAll": true
+    }
+  ]
+}

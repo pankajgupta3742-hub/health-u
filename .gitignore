@@ -1,0 +1,41 @@
+# Environments
+.env
+*.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+*.local
+
+# Python
+__pycache__/
+backend/__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+backend/*.pdf
+backend/reports/
+backend/*.db
+backend/.pytest_cache/
+data/*.pdf
+
+# generated signing secret
+backend/.jwt_secret
+.jwt_secret
+
+# Upstream patient data is not authorized for redistribution
+data/raw/dengue_chittagong.csv
+data/processed/chittagong_dengue.csv

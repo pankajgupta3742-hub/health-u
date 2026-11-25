@@ -1,0 +1,603 @@
+{
+  "model": "malaria",
+  "task": "binary",
+  "classes": [
+    "0",
+    "1"
+  ],
+  "features": [
+    {
+      "name": "Age",
+      "type": "numeric",
+      "default": 14.0,
+      "min": 0.1,
+      "max": 85.0
+    },
+    {
+      "name": "Weight",
+      "type": "numeric",
+      "default": 18.0,
+      "min": 5.0,
+      "max": 131.0
+    },
+    {
+      "name": "\u00b0C",
+      "type": "numeric",
+      "default": 38.0,
+      "min": 34.6,
+      "max": 3909.0
+    },
+    {
+      "name": "median breaths/min IQR",
+      "type": "numeric",
+      "default": 32.0,
+      "min": 6.0,
+      "max": 66.0
+    },
+    {
+      "name": "Fr\u00e9quence du pouls (battements/m in \u00b1 SD)./ Pulse rate (mean beats/min \u00b1 SD) - S",
+      "type": "numeric",
+      "default": 108.0,
+      "min": 26.0,
+      "max": 124000.0
+    },
+    {
+      "name": "Gender",
+      "type": "categorical",
+      "options": [
+        "Homme",
+        "Femme"
+      ],
+      "default": "Homme"
+    },
+    {
+      "name": "temperature, Hyperpyrexia",
+      "type": "categorical",
+      "options": [
+        "OUI",
+        "NON"
+      ],
+      "default": "OUI"
+    },
+    {
+      "name": "Fever 48 hrs",
+      "type": "categorical",
+      "options": [
+        "OUI",
+        "NON"
+      ],
+      "default": "OUI"
+    },
+    {
+      "name": "Fever in the last 7 days",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Type of Fever",
+      "type": "categorical",
+      "options": [
+        "R\u00e9currente",
+        "Intermittente"
+      ],
+      "default": "R\u00e9currente"
+    },
+    {
+      "name": "Loss of Weight",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "headache",
+      "type": "categorical",
+      "options": [
+        "OUI",
+        "NON"
+      ],
+      "default": "OUI"
+    },
+    {
+      "name": "Nausea",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Vomiting",
+      "type": "categorical",
+      "options": [
+        "OUI",
+        "NON"
+      ],
+      "default": "OUI"
+    },
+    {
+      "name": "Joint pain",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Joint Swelling",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Muscle pain",
+      "type": "categorical",
+      "options": [
+        "OUI",
+        "NON"
+      ],
+      "default": "OUI"
+    },
+    {
+      "name": "Chaist pain",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Back pain / Rachiodynia",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Consciousness trouble",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Loss of appetite or Anorexia",
+      "type": "categorical",
+      "options": [
+        "OUI",
+        "NON"
+      ],
+      "default": "OUI"
+    },
+    {
+      "name": "Skin rash or Exanthema",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Morbilliform rash",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Bleeding",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Rhinorrhea",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Drowsiness or lethargy",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Dizzy",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "stomac pain",
+      "type": "categorical",
+      "options": [
+        "OUI",
+        "NON"
+      ],
+      "default": "OUI"
+    },
+    {
+      "name": "Distension abdominale (Ventre gonfl\u00e9) (Abdominal Distension (Swelling Stomach)/ ",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "throat pain",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Cough",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Diarrhea",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Retro-orbital pain",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Headache",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Shiver or cold sensation",
+      "type": "categorical",
+      "options": [
+        "OUI",
+        "NON"
+      ],
+      "default": "OUI"
+    },
+    {
+      "name": "Frequent Urination",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Constipation",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Oliguria",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Frequent Urination (2)",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Prostration",
+      "type": "categorical",
+      "options": [
+        "OUI",
+        "NON"
+      ],
+      "default": "OUI"
+    },
+    {
+      "name": "Icterus",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Bleeding nose",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Generalised or focal convulsion",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Multiple convulsions",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "D\u00e9lire",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "impaired level of consciousness",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Facial Swelling",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Delirium/ Irrational Talking",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Hemoglobinuria",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Bitter taste in your Throat",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Positive tourniquet test",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Stiffness",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Respiratory distress",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Shock",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Hepatomegaly",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Heart failure or Myocarditis",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Accumulation of fluid and respiratory distress",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Spl\u00e9nom\u00e9galie mod\u00e9r\u00e9e",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Septicemia",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Sub-icterus",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Lymphad\u00e9nopathie / Lymphadenopa thy",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Diab\u00e8te",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Hypertension art\u00e9rielle",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Dr\u00e9panocytose",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Arthrose",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Astma",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    },
+    {
+      "name": "Household Dengue",
+      "type": "categorical",
+      "options": [
+        "NON",
+        "OUI"
+      ],
+      "default": "NON"
+    }
+  ]
+}

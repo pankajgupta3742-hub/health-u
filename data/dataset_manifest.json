@@ -1,0 +1,1278 @@
+{
+  "datasets": {
+    "burkina_vector_borne": {
+      "processed_file": "data/processed/burkina_vector_borne.csv",
+      "rows_raw": 300,
+      "rows_used_malaria": 299,
+      "rows_used_vector_borne": 299,
+      "label_counts": {
+        "malaria": {
+          "1.0": 270,
+          "0.0": 29
+        },
+        "vector_borne": {
+          "1.0": 285,
+          "0.0": 14
+        }
+      },
+      "features_used": 78,
+      "excluded_columns": {
+        "Centre de santé": "recruitment site (not a clinical feature; would leak site-level prevalence)",
+        "Test TDR": "laboratory or diagnostic test result (not available at triage, or defines the diagnosis)",
+        "Goutte épaisse ": "laboratory or diagnostic test result (not available at triage, or defines the diagnosis)",
+        " Hémoconcentration": "laboratory or diagnostic test result (not available at triage, or defines the diagnosis)",
+        "Pâleur cutanéo muqueuse ou Anémie (Mucosal skin pallor or Anemia)": "laboratory or diagnostic test result (not available at triage, or defines the diagnosis)",
+        "Hypoglycémie (Hypoglycemia)": "laboratory or diagnostic test result (not available at triage, or defines the diagnosis)",
+        "Hematocrite (Hematrocrit)": "laboratory or diagnostic test result (not available at triage, or defines the diagnosis)",
+        "Transaminases (Transaminases)": "laboratory or diagnostic test result (not available at triage, or defines the diagnosis)",
+        "Thrombocytopénie(Thrombocytopenia)": "laboratory or diagnostic test result (not available at triage, or defines the diagnosis)",
+        "Lymphocytopénie (Lymphocytopenia)": "laboratory or diagnostic test result (not available at triage, or defines the diagnosis)",
+        "Lymphocytes ": "laboratory or diagnostic test result (not available at triage, or defines the diagnosis)",
+        "Neutropénie (Neutropenia)": "laboratory or diagnostic test result (not available at triage, or defines the diagnosis)",
+        "Nombre de globules blancs (cellules/ML) / White blood cell count / WBC count (cells/ML)": "laboratory or diagnostic test result (not available at triage, or defines the diagnosis)",
+        "Numération plaquettaire Platelet count": "laboratory or diagnostic test result (not available at triage, or defines the diagnosis)",
+        "Neutrophiles / Neutrophils": "laboratory or diagnostic test result (not available at triage, or defines the diagnosis)",
+        "CRP>50 /CRP 10-50": "laboratory or diagnostic test result (not available at triage, or defines the diagnosis)",
+        "Créatinine élevée / Elevated Creatinine": "laboratory or diagnostic test result (not available at triage, or defines the diagnosis)",
+        "ALAT / ASAT élevés. / Elevated ALAT / Elevated ASAT": "laboratory or diagnostic test result (not available at triage, or defines the diagnosis)",
+        "Pneumonie (Pneumonia)": "diagnosis-like comorbidity; kept out to keep the feature set clinical",
+        "Dengue (Dengua)": "laboratory or diagnostic test result (not available at triage, or defines the diagnosis)",
+        "Maladies diagnostiquées": "diagnosis label or diagnosis text (leakage)",
+        "Maladies diagnostiquées/Paludisme (Malaria)": "diagnosis label or diagnosis text (leakage)",
+        "Maladies diagnostiquées/Dengue": "diagnosis label or diagnosis text (leakage)",
+        "Maladies diagnostiquées/Chikunguya": "diagnosis label or diagnosis text (leakage)",
+        "Maladies diagnostiquées/Fièvre jaune (yellow fever)": "diagnosis label or diagnosis text (leakage)",
+        "Maladies diagnostiquées/Fièvre Typhoïde (Thyphoid fever)": "diagnosis label or diagnosis text (leakage)",
+        "Maladies diagnostiquées/Zika": "diagnosis label or diagnosis text (leakage)",
+        "Maladies diagnostiquées/Autres maladies diagnostiqué (Others diseases)": "diagnosis label or diagnosis text (leakage)",
+        "Maladies diagnostiquées/Option 8": "diagnosis label or diagnosis text (leakage)",
+        "Autres maladies présentées par le patient": "diagnosis label or diagnosis text (leakage)",
+        "_uuid": "record identifier"
+      },
+      "feature_map": {
+        "Gender": {
+          "source_column": "Genre (Gender)",
+          "kind": "categorical_or_binary"
+        },
+        "Age": {
+          "source_column": "Âge (Age)",
+          "kind": "numeric"
+        },
+        "Weight": {
+          "source_column": "Poids (Weight)",
+          "kind": "numeric"
+        },
+        "Mua circumference": {
+          "source_column": "Circonference du bras (Mua circumference)",
+          "kind": "numeric"
+        },
+        "temperature, Hyperpyrexia": {
+          "source_column": "Haute température.(temperature, Hyperpyrexia)",
+          "kind": "numeric"
+        },
+        "Fever 48 hrs": {
+          "source_column": "Fièvre depuis 48 heures(Fever 48 hrs)",
+          "kind": "numeric"
+        },
+        "Fever in the last 7 days": {
+          "source_column": "Fièvre au cours des 7 derniers jours (Fever in the last 7 days)",
+          "kind": "numeric"
+        },
+        "Type of Fever": {
+          "source_column": "Type de fièvre (Type of Fever)",
+          "kind": "categorical_or_binary"
+        },
+        "Loss of Weight": {
+          "source_column": "Perte de poids (Loss of Weight)",
+          "kind": "categorical_or_binary"
+        },
+        "headache": {
+          "source_column": "Maux de tête (headache)",
+          "kind": "categorical_or_binary"
+        },
+        "Nausea": {
+          "source_column": "Nausée (Nausea)",
+          "kind": "categorical_or_binary"
+        },
+        "Vomiting": {
+          "source_column": "Vomissement (Vomiting)",
+          "kind": "categorical_or_binary"
+        },
+        "Joint pain": {
+          "source_column": "Douleur articulaire (Joint pain)",
+          "kind": "categorical_or_binary"
+        },
+        "Joint Swelling": {
+          "source_column": "Gonflement des articulations (Joint Swelling)",
+          "kind": "categorical_or_binary"
+        },
+        "Muscle pain": {
+          "source_column": "Douleur musculaire ( Muscle pain)",
+          "kind": "categorical_or_binary"
+        },
+        "Chaist pain": {
+          "source_column": "Douleur Thoracique (Chaist pain)",
+          "kind": "categorical_or_binary"
+        },
+        "Back pain / Rachiodynia": {
+          "source_column": "Mal de dos / Douleur rachidienne ( Back pain / Rachiodynia)",
+          "kind": "categorical_or_binary"
+        },
+        "Consciousness trouble": {
+          "source_column": "Troubles de la conscience (Consciousness trouble)",
+          "kind": "categorical_or_binary"
+        },
+        "Loss of appetite or Anorexia": {
+          "source_column": "Perte d'appétit ou Anorexie (Loss of appetite or Anorexia)",
+          "kind": "categorical_or_binary"
+        },
+        "Skin rash or Exanthema": {
+          "source_column": "Éruptions cutanées ou Exanthème (Skin rash or Exanthema)",
+          "kind": "categorical_or_binary"
+        },
+        "Morbilliform rash": {
+          "source_column": "Éruption morbilliforme (Morbilliform rash)",
+          "kind": "categorical_or_binary"
+        },
+        "Bleeding": {
+          "source_column": "Saignement/ Manifestations hémorragiques (Bleeding)",
+          "kind": "categorical_or_binary"
+        },
+        "Rhinorrhea": {
+          "source_column": "Rhinorrhée (Rhinorrhea)",
+          "kind": "categorical_or_binary"
+        },
+        "Drowsiness or lethargy": {
+          "source_column": "Somnolence ou léthargie  (Drowsiness or lethargy)",
+          "kind": "categorical_or_binary"
+        },
+        "Dizzy": {
+          "source_column": "Vertige (Dizzy)",
+          "kind": "categorical_or_binary"
+        },
+        "Inflammation de conjonctivite": {
+          "source_column": "Inflammation de conjonctivite",
+          "kind": "categorical_or_binary"
+        },
+        "stomac pain": {
+          "source_column": "Douleur abdominale (stomac pain)",
+          "kind": "categorical_or_binary"
+        },
+        "Distension abdominale (Ventre gonflé) (Abdominal Distension (Swelling Stomach)/ ": {
+          "source_column": "Distension abdominale (Ventre gonflé) (Abdominal Distension (Swelling Stomach)/ Ascites)",
+          "kind": "categorical_or_binary"
+        },
+        "throat pain": {
+          "source_column": "Mal de gorge (throat pain)",
+          "kind": "categorical_or_binary"
+        },
+        "Cough": {
+          "source_column": "Toux (Cough)",
+          "kind": "categorical_or_binary"
+        },
+        "Diarrhea": {
+          "source_column": "Diarrhée  (Diarrhea)",
+          "kind": "categorical_or_binary"
+        },
+        "Retro-orbital pain": {
+          "source_column": " Douleur rétro-orbitrale (Retro-orbital pain)",
+          "kind": "categorical_or_binary"
+        },
+        "Headache": {
+          "source_column": "Céphalée (Headache)",
+          "kind": "categorical_or_binary"
+        },
+        "Shiver or cold sensation": {
+          "source_column": "Sensation de frissons ou de froid (Shiver or cold sensation)",
+          "kind": "categorical_or_binary"
+        },
+        "Frequent Urination": {
+          "source_column": "Mictions fréquentes.(Frequent Urination)",
+          "kind": "categorical_or_binary"
+        },
+        "Constipation": {
+          "source_column": "Constipation",
+          "kind": "categorical_or_binary"
+        },
+        "Oliguria": {
+          "source_column": "Oligurie (Oliguria)",
+          "kind": "categorical_or_binary"
+        },
+        "Frequent Urination (2)": {
+          "source_column": "Mictions fréquentes. (Frequent Urination)",
+          "kind": "categorical_or_binary"
+        },
+        "Prostration": {
+          "source_column": "Prostration",
+          "kind": "categorical_or_binary"
+        },
+        "Icterus": {
+          "source_column": "Ictère (Icterus)",
+          "kind": "categorical_or_binary"
+        },
+        "Bleeding nose": {
+          "source_column": "Epistaxis ((Bleeding nose)",
+          "kind": "categorical_or_binary"
+        },
+        "Generalised or focal convulsion": {
+          "source_column": "Convulsions généralisées ou focales (Generalised or focal convulsion)",
+          "kind": "categorical_or_binary"
+        },
+        "Multiple convulsions": {
+          "source_column": "Convulsions multiples (Multiple convulsions)",
+          "kind": "categorical_or_binary"
+        },
+        "Délire": {
+          "source_column": "Délire ",
+          "kind": "categorical_or_binary"
+        },
+        "impaired level of consciousness": {
+          "source_column": "Confusion/ niveau de conscience altéré (impaired level of consciousness)",
+          "kind": "categorical_or_binary"
+        },
+        "Facial flushing": {
+          "source_column": "Rougeur faciale (Facial flushing)",
+          "kind": "categorical_or_binary"
+        },
+        "Facial Swelling": {
+          "source_column": "Gonflement du visage (Facial Swelling)",
+          "kind": "categorical_or_binary"
+        },
+        "Profuse sweating": {
+          "source_column": "Sudation excessive (Profuse sweating)",
+          "kind": "categorical_or_binary"
+        },
+        "Delirium/ Irrational Talking": {
+          "source_column": "Délire /Discours irrationnel (Delirium/ Irrational Talking)",
+          "kind": "categorical_or_binary"
+        },
+        "Hemoglobinuria": {
+          "source_column": "Hémoglobinurie (Hemoglobinuria)",
+          "kind": "categorical_or_binary"
+        },
+        "Bitter taste in your Throat": {
+          "source_column": "Goût amer dans la gorge (Bitter taste in your Throat)",
+          "kind": "categorical_or_binary"
+        },
+        "Positive tourniquet test": {
+          "source_column": "Test de garrot positif (Positive tourniquet test)",
+          "kind": "categorical_or_binary"
+        },
+        "Stiffness": {
+          "source_column": "Raideur (Stiffness)",
+          "kind": "categorical_or_binary"
+        },
+        "Respiratory distress": {
+          "source_column": "Détresse respiratoire (Respiratory distress)",
+          "kind": "categorical_or_binary"
+        },
+        "Shock": {
+          "source_column": "Choc septique (Shock)",
+          "kind": "categorical_or_binary"
+        },
+        "Hepatomegaly": {
+          "source_column": "Hépatomégalie (Hepatomegaly)",
+          "kind": "categorical_or_binary"
+        },
+        "Heart failure or Myocarditis": {
+          "source_column": "Insuffisance cardiaque  ou Myocardite(Heart failure or Myocarditis)",
+          "kind": "categorical_or_binary"
+        },
+        "Accumulation of fluid and respiratory distress": {
+          "source_column": "Accumulation de liquide et détresse respiratoire (Accumulation of fluid and respiratory distress)",
+          "kind": "categorical_or_binary"
+        },
+        "Splénomégalie modérée": {
+          "source_column": "Splénomégalie modérée",
+          "kind": "categorical_or_binary"
+        },
+        "Septicemia": {
+          "source_column": "Choc septique (Septicemia)",
+          "kind": "categorical_or_binary"
+        },
+        "Sub-icterus": {
+          "source_column": "Syndrome d'icterus subaigu (Sub-icterus)",
+          "kind": "categorical_or_binary"
+        },
+        "Lymphadénopathie / Lymphadenopa thy": {
+          "source_column": "Lymphadénopathie / Lymphadenopa thy",
+          "kind": "categorical_or_binary"
+        },
+        "°C": {
+          "source_column": "Température axillaire (médiane IQR) (°C) /Axillary temperature (median IQR) (°C)",
+          "kind": "numeric"
+        },
+        "median breaths/min IQR": {
+          "source_column": "Fréquence respiratoire (médiane IQR) / Respiratory rate (median breaths/min IQR)",
+          "kind": "numeric"
+        },
+        "Fréquence du pouls (battements/m in ± SD)./ Pulse rate (mean beats/min ± SD) - S": {
+          "source_column": "Fréquence du pouls (battements/m in ± SD)./ Pulse rate (mean beats/min ± SD) - Shock ou Myocarditis",
+          "kind": "numeric"
+        },
+        "mean mmHg ± SD": {
+          "source_column": "Pression artérielle (moyenne mmHg ± SD). / Arterial blood pressure (mean mmHg ± SD)",
+          "kind": "numeric"
+        },
+        "median secs IQR": {
+          "source_column": "Temps de remplissage capillaire (médiane secs IQR). / Capillary refill time (median secs IQR)",
+          "kind": "numeric"
+        },
+        "Diabète": {
+          "source_column": "Diabète ",
+          "kind": "categorical_or_binary"
+        },
+        "Hypertension artérielle": {
+          "source_column": "Hypertension artérielle",
+          "kind": "categorical_or_binary"
+        },
+        "Drépanocytose": {
+          "source_column": "Drépanocytose",
+          "kind": "categorical_or_binary"
+        },
+        "Maladie rhumatismale": {
+          "source_column": "Maladie rhumatismale",
+          "kind": "categorical_or_binary"
+        },
+        "Maladie auto immune": {
+          "source_column": "Maladie auto immune",
+          "kind": "categorical_or_binary"
+        },
+        "Arthrose": {
+          "source_column": "Arthrose",
+          "kind": "categorical_or_binary"
+        },
+        "Allergies": {
+          "source_column": "Allergies",
+          "kind": "categorical_or_binary"
+        },
+        "Cancer": {
+          "source_column": "Cancer",
+          "kind": "categorical_or_binary"
+        },
+        "Astma": {
+          "source_column": "Asthme (Astma)",
+          "kind": "categorical_or_binary"
+        },
+        "Leucopenia": {
+          "source_column": "Carences en leucocytes (Leucopenia)",
+          "kind": "categorical_or_binary"
+        },
+        "Household Dengue": {
+          "source_column": "Dengue dans le menage (Household Dengue)",
+          "kind": "categorical_or_binary"
+        }
+      },
+      "title": "Clinical dataset on malaria, dengue, yellow fever and other vector-borne diseases (Burkina Faso)",
+      "source": "GitHub zombiboy/Tabular-dataset-for-AI-based-vector-borne-disease-prediction",
+      "source_urls": [
+        "https://github.com/zombiboy/Tabular-dataset-for-AI-based-vector-borne-disease-prediction",
+        "https://raw.githubusercontent.com/zombiboy/Tabular-dataset-for-AI-based-vector-borne-disease-prediction/main/data.csv",
+        "https://raw.githubusercontent.com/zombiboy/Tabular-dataset-for-AI-based-vector-borne-disease-prediction/main/desciption.xlsx"
+      ],
+      "licence": "CC BY 4.0 (stated in the dataset README)",
+      "citation": "Nazi Boni University, Burkina Faso (AI4D Africa). 300 consultations from the DO and DAFRA districts, Sept–Nov 2024.",
+      "raw_files": [
+        "vector_borne_burkina_faso.csv",
+        "vector_borne_burkina_faso_description.xlsx"
+      ],
+      "raw_description": "300 records, 109 columns, semicolon-separated, French/English headers",
+      "notes": []
+    },
+    "chittagong_dengue": {
+      "processed_file": "data/processed/chittagong_dengue.csv",
+      "rows_raw": 308,
+      "rows_used": 308,
+      "label_counts": {
+        "1": 205,
+        "0": 103
+      },
+      "features_used": 16,
+      "excluded_columns": {
+        "LLBplatelet": "platelet count is a laboratory result, not available at first contact",
+        "IgG": "serology result (laboratory), part of the diagnostic workup",
+        "IgM": "serology result (laboratory), part of the diagnostic workup"
+      },
+      "feature_map": {
+        "Age": {
+          "source_column": "Age"
+        },
+        "Sex": {
+          "source_column": "Sex"
+        },
+        "Work": {
+          "source_column": "Work"
+        },
+        "BpSys": {
+          "source_column": "BpSys"
+        },
+        "Bpdias": {
+          "source_column": "Bpdias"
+        },
+        "Pulse": {
+          "source_column": "Pulse"
+        },
+        "Cough": {
+          "source_column": "Cough"
+        },
+        "Fever": {
+          "source_column": "Fever"
+        },
+        "Headache": {
+          "source_column": "Headache"
+        },
+        "Muscle pain": {
+          "source_column": "Muscle pain"
+        },
+        "Bleeding": {
+          "source_column": "Bleeding"
+        },
+        "Skinrash": {
+          "source_column": "Skinrash"
+        },
+        "Vomiting": {
+          "source_column": "Vomiting"
+        },
+        "Diarrhoea": {
+          "source_column": "Diarrhoea"
+        },
+        "Fatigue": {
+          "source_column": "Fatigue"
+        },
+        "Rapid breathing": {
+          "source_column": "Rapid breathing"
+        }
+      },
+      "title": "Early detection of dengue, Chittagong and Cox's Bazar (Bangladesh)",
+      "source": "GitHub TurhanSakib/Machine-Learning-based-Early-detection-of-dengue-Case-study-Chittagong",
+      "source_urls": [
+        "https://github.com/TurhanSakib/Machine-Learning-based-Early-detection-of-dengue-Case-study-Chittagong"
+      ],
+      "licence": "MIT for the upstream repository code; it does not grant redistribution rights for patient data. Raw and processed Chittagong CSVs are excluded from this publication. Contact the authors for data access.",
+      "citation": "Sakib T. et al., BSc thesis, IIUC, Bangladesh. 308 patients from public and private hospitals.",
+      "raw_files": [
+        "dengue_chittagong.csv",
+        "dengue_chittagong_README.md"
+      ],
+      "raw_description": "308 records, 20 columns, normalised 0–2 scale values",
+      "notes": [
+        "Provenance conflict: see licence field."
+      ]
+    },
+    "typhodx_bd_typhoid": {
+      "processed_file": "data/processed/typhodx_bd.csv",
+      "rows_raw": 1106,
+      "rows_used": 540,
+      "rows_dropped": {
+        "Typhoid = Minimal or missing (ambiguous)": 566
+      },
+      "label_counts": {
+        "0": 462,
+        "1": 78
+      },
+      "features_used": 12,
+      "excluded_columns": {
+        "Name": "encrypted patient token; identifier, never used or stored in processed data",
+        "Acute_typhoid": "other diagnosis outcome (leakage)",
+        "Paratyphoid_A": "other diagnosis outcome (leakage)",
+        "Paratyphoid_B": "other diagnosis outcome (leakage)"
+      },
+      "title": "TyphoDx-BD: clinically validated typhoid dataset (Bangladesh)",
+      "source": "Mendeley Data m9pnvv2vpv",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/m9pnvv2vpv/1",
+        "https://data.mendeley.com/public-api/zip/m9pnvv2vpv/download/1"
+      ],
+      "licence": "CC BY 4.0 (stated on Mendeley Data)",
+      "citation": "TyphoDx-BD clinical dataset, 1,106 patients, Bangladesh, Oct 2024–Jan 2025 (Mendeley Data m9pnvv2vpv).",
+      "raw_files": [
+        "typhodx_bd_original.csv",
+        "typhodx_bd_validation_certificate.pdf"
+      ],
+      "raw_description": "1,106 records, 17 columns",
+      "notes": []
+    },
+    "srilanka_leptospirosis": {
+      "processed_file": "data/processed/srilanka_leptospirosis.csv",
+      "rows_raw": 1734,
+      "rows_used": 1734,
+      "label_counts": {
+        "0": 1143,
+        "1": 591
+      },
+      "features_used": 173,
+      "excluded_columns": {
+        "Serial": "record identifier",
+        "Indexno": "record identifier",
+        "Year": "time field (not a clinical feature)",
+        "Month": "time field (not a clinical feature)",
+        "Hospital": "care setting (not a clinical feature)",
+        "ICU": "care setting (not a clinical feature)",
+        "OPD": "care setting (not a clinical feature)",
+        "Ethnicity": "socio-demographic or household field (kept out to keep the model focused on exposure and symptoms)",
+        "Income": "socio-demographic or household field (kept out to keep the model focused on exposure and symptoms)",
+        "Education": "socio-demographic or household field (kept out to keep the model focused on exposure and symptoms)",
+        "TertiaryEducation": "socio-demographic or household field (kept out to keep the model focused on exposure and symptoms)",
+        "Prophylactics": "socio-demographic or household field (kept out to keep the model focused on exposure and symptoms)",
+        "Pasttreatments": "socio-demographic or household field (kept out to keep the model focused on exposure and symptoms)",
+        "Pastantibiotics": "socio-demographic or household field (kept out to keep the model focused on exposure and symptoms)",
+        "Headache2": "day-by-day series (time-varying, follows admission; not used)",
+        "Headache3": "day-by-day series (time-varying, follows admission; not used)",
+        "Headache4": "day-by-day series (time-varying, follows admission; not used)",
+        "Headache5": "day-by-day series (time-varying, follows admission; not used)",
+        "Headache6": "day-by-day series (time-varying, follows admission; not used)",
+        "Headache7": "day-by-day series (time-varying, follows admission; not used)",
+        "Headache8": "day-by-day series (time-varying, follows admission; not used)",
+        "Headache9": "day-by-day series (time-varying, follows admission; not used)",
+        "Headache10": "day-by-day series (time-varying, follows admission; not used)",
+        "Fever2": "day-by-day series (time-varying, follows admission; not used)",
+        "Fever3": "day-by-day series (time-varying, follows admission; not used)",
+        "Fever4": "day-by-day series (time-varying, follows admission; not used)",
+        "Fever5": "day-by-day series (time-varying, follows admission; not used)",
+        "Fever6": "day-by-day series (time-varying, follows admission; not used)",
+        "Fever7": "day-by-day series (time-varying, follows admission; not used)",
+        "Fever8": "day-by-day series (time-varying, follows admission; not used)",
+        "Fever9": "day-by-day series (time-varying, follows admission; not used)",
+        "Fever10": "day-by-day series (time-varying, follows admission; not used)",
+        "Chills2": "day-by-day series (time-varying, follows admission; not used)",
+        "Chills3": "day-by-day series (time-varying, follows admission; not used)",
+        "Chills4": "day-by-day series (time-varying, follows admission; not used)",
+        "Chills5": "day-by-day series (time-varying, follows admission; not used)",
+        "Chills6": "day-by-day series (time-varying, follows admission; not used)",
+        "Chills7": "day-by-day series (time-varying, follows admission; not used)",
+        "Chills8": "day-by-day series (time-varying, follows admission; not used)",
+        "Chills9": "day-by-day series (time-varying, follows admission; not used)",
+        "Chills10": "day-by-day series (time-varying, follows admission; not used)",
+        "Rigors2": "day-by-day series (time-varying, follows admission; not used)",
+        "Rigors3": "day-by-day series (time-varying, follows admission; not used)",
+        "Rigors4": "day-by-day series (time-varying, follows admission; not used)",
+        "Rigors5": "day-by-day series (time-varying, follows admission; not used)",
+        "Rigors6": "day-by-day series (time-varying, follows admission; not used)",
+        "Rigors7": "day-by-day series (time-varying, follows admission; not used)",
+        "Rigors8": "day-by-day series (time-varying, follows admission; not used)",
+        "Rigors9": "day-by-day series (time-varying, follows admission; not used)",
+        "Rigors10": "day-by-day series (time-varying, follows admission; not used)",
+        "Musclepain2": "day-by-day series (time-varying, follows admission; not used)",
+        "Musclepain3": "day-by-day series (time-varying, follows admission; not used)",
+        "Musclepain4": "day-by-day series (time-varying, follows admission; not used)",
+        "Musclepain5": "day-by-day series (time-varying, follows admission; not used)",
+        "Musclepain6": "day-by-day series (time-varying, follows admission; not used)",
+        "Musclepain7": "day-by-day series (time-varying, follows admission; not used)",
+        "Musclepain8": "day-by-day series (time-varying, follows admission; not used)",
+        "Musclepain9": "day-by-day series (time-varying, follows admission; not used)",
+        "Musclepain10": "day-by-day series (time-varying, follows admission; not used)",
+        "Mustender2": "day-by-day series (time-varying, follows admission; not used)",
+        "Mustender3": "day-by-day series (time-varying, follows admission; not used)",
+        "Mustender4": "day-by-day series (time-varying, follows admission; not used)",
+        "Mustender5": "day-by-day series (time-varying, follows admission; not used)",
+        "Mustender6": "day-by-day series (time-varying, follows admission; not used)",
+        "Mustender7": "day-by-day series (time-varying, follows admission; not used)",
+        "Mustender8": "day-by-day series (time-varying, follows admission; not used)",
+        "Mustender9": "day-by-day series (time-varying, follows admission; not used)",
+        "Mustender10": "day-by-day series (time-varying, follows admission; not used)",
+        "Nausea2": "day-by-day series (time-varying, follows admission; not used)",
+        "Nausea3": "day-by-day series (time-varying, follows admission; not used)",
+        "Nausea4": "day-by-day series (time-varying, follows admission; not used)",
+        "Nausea5": "day-by-day series (time-varying, follows admission; not used)",
+        "Nausea6": "day-by-day series (time-varying, follows admission; not used)",
+        "Nausea7": "day-by-day series (time-varying, follows admission; not used)",
+        "Nausea8": "day-by-day series (time-varying, follows admission; not used)",
+        "Nausea9": "day-by-day series (time-varying, follows admission; not used)",
+        "Nausea10": "day-by-day series (time-varying, follows admission; not used)",
+        "Vomiting2": "day-by-day series (time-varying, follows admission; not used)",
+        "Vomiting3": "day-by-day series (time-varying, follows admission; not used)",
+        "Vomiting4": "day-by-day series (time-varying, follows admission; not used)",
+        "Vomiting5": "day-by-day series (time-varying, follows admission; not used)",
+        "Vomiting6": "day-by-day series (time-varying, follows admission; not used)",
+        "Vomiting7": "day-by-day series (time-varying, follows admission; not used)",
+        "Vomiting8": "day-by-day series (time-varying, follows admission; not used)",
+        "Vomiting9": "day-by-day series (time-varying, follows admission; not used)",
+        "Vomiting10": "day-by-day series (time-varying, follows admission; not used)",
+        "Consuf2": "day-by-day series (time-varying, follows admission; not used)",
+        "Consuf3": "day-by-day series (time-varying, follows admission; not used)",
+        "Consuf4": "day-by-day series (time-varying, follows admission; not used)",
+        "Consuf5": "day-by-day series (time-varying, follows admission; not used)",
+        "Consuf6": "day-by-day series (time-varying, follows admission; not used)",
+        "Consuf7": "day-by-day series (time-varying, follows admission; not used)",
+        "Consuf8": "day-by-day series (time-varying, follows admission; not used)",
+        "Consuf9": "day-by-day series (time-varying, follows admission; not used)",
+        "Consuf10": "day-by-day series (time-varying, follows admission; not used)",
+        "Skinrash2": "day-by-day series (time-varying, follows admission; not used)",
+        "Skinrash3": "day-by-day series (time-varying, follows admission; not used)",
+        "Skinrash4": "day-by-day series (time-varying, follows admission; not used)",
+        "Skinrash5": "day-by-day series (time-varying, follows admission; not used)",
+        "Skinrash6": "day-by-day series (time-varying, follows admission; not used)",
+        "Skinrash7": "day-by-day series (time-varying, follows admission; not used)",
+        "Skinrash8": "day-by-day series (time-varying, follows admission; not used)",
+        "Skinrash9": "day-by-day series (time-varying, follows admission; not used)",
+        "Skinrash10": "day-by-day series (time-varying, follows admission; not used)",
+        "Mucorash2": "day-by-day series (time-varying, follows admission; not used)",
+        "Mucorash3": "day-by-day series (time-varying, follows admission; not used)",
+        "Mucorash4": "day-by-day series (time-varying, follows admission; not used)",
+        "Mucorash5": "day-by-day series (time-varying, follows admission; not used)",
+        "Mucorash6": "day-by-day series (time-varying, follows admission; not used)",
+        "Mucorash7": "day-by-day series (time-varying, follows admission; not used)",
+        "Mucorash8": "day-by-day series (time-varying, follows admission; not used)",
+        "Mucorash9": "day-by-day series (time-varying, follows admission; not used)",
+        "Mucorash10": "day-by-day series (time-varying, follows admission; not used)",
+        "Prostration2": "day-by-day series (time-varying, follows admission; not used)",
+        "Prostration3": "day-by-day series (time-varying, follows admission; not used)",
+        "Prostration4": "day-by-day series (time-varying, follows admission; not used)",
+        "Prostration5": "day-by-day series (time-varying, follows admission; not used)",
+        "Prostration6": "day-by-day series (time-varying, follows admission; not used)",
+        "Prostration7": "day-by-day series (time-varying, follows admission; not used)",
+        "Prostration8": "day-by-day series (time-varying, follows admission; not used)",
+        "Prostration9": "day-by-day series (time-varying, follows admission; not used)",
+        "Prostration10": "day-by-day series (time-varying, follows admission; not used)",
+        "diarrhea2": "day-by-day series (time-varying, follows admission; not used)",
+        "diarrhea3": "day-by-day series (time-varying, follows admission; not used)",
+        "diarrhea4": "day-by-day series (time-varying, follows admission; not used)",
+        "diarrhea5": "day-by-day series (time-varying, follows admission; not used)",
+        "diarrhea6": "day-by-day series (time-varying, follows admission; not used)",
+        "diarrhea7": "day-by-day series (time-varying, follows admission; not used)",
+        "diarrhea8": "day-by-day series (time-varying, follows admission; not used)",
+        "diarrhea9": "day-by-day series (time-varying, follows admission; not used)",
+        "diarrhea10": "day-by-day series (time-varying, follows admission; not used)",
+        "Oliguria2": "day-by-day series (time-varying, follows admission; not used)",
+        "Oliguria3": "day-by-day series (time-varying, follows admission; not used)",
+        "Oliguria4": "day-by-day series (time-varying, follows admission; not used)",
+        "Oliguria5": "day-by-day series (time-varying, follows admission; not used)",
+        "Oliguria6": "day-by-day series (time-varying, follows admission; not used)",
+        "Oliguria7": "day-by-day series (time-varying, follows admission; not used)",
+        "Oliguria8": "day-by-day series (time-varying, follows admission; not used)",
+        "Oliguria9": "day-by-day series (time-varying, follows admission; not used)",
+        "Oliguria10": "day-by-day series (time-varying, follows admission; not used)",
+        "Anuria2": "day-by-day series (time-varying, follows admission; not used)",
+        "Anuria3": "day-by-day series (time-varying, follows admission; not used)",
+        "Anuria4": "day-by-day series (time-varying, follows admission; not used)",
+        "Anuria5": "day-by-day series (time-varying, follows admission; not used)",
+        "Anuria6": "day-by-day series (time-varying, follows admission; not used)",
+        "Anuria7": "day-by-day series (time-varying, follows admission; not used)",
+        "Anuria8": "day-by-day series (time-varying, follows admission; not used)",
+        "Anuria9": "day-by-day series (time-varying, follows admission; not used)",
+        "Anuria10": "day-by-day series (time-varying, follows admission; not used)",
+        "Jaundice2": "day-by-day series (time-varying, follows admission; not used)",
+        "Jaundice3": "day-by-day series (time-varying, follows admission; not used)",
+        "Jaundice4": "day-by-day series (time-varying, follows admission; not used)",
+        "Jaundice5": "day-by-day series (time-varying, follows admission; not used)",
+        "Jaundice6": "day-by-day series (time-varying, follows admission; not used)",
+        "Jaundice7": "day-by-day series (time-varying, follows admission; not used)",
+        "Jaundice8": "day-by-day series (time-varying, follows admission; not used)",
+        "Jaundice9": "day-by-day series (time-varying, follows admission; not used)",
+        "Jaundice10": "day-by-day series (time-varying, follows admission; not used)",
+        "hepatictender2": "day-by-day series (time-varying, follows admission; not used)",
+        "hepatictender3": "day-by-day series (time-varying, follows admission; not used)",
+        "hepatictender4": "day-by-day series (time-varying, follows admission; not used)",
+        "hepatictender5": "day-by-day series (time-varying, follows admission; not used)",
+        "hepatictender6": "day-by-day series (time-varying, follows admission; not used)",
+        "hepatictender7": "day-by-day series (time-varying, follows admission; not used)",
+        "hepatictender8": "day-by-day series (time-varying, follows admission; not used)",
+        "hepatictender9": "day-by-day series (time-varying, follows admission; not used)",
+        "hepatictender10": "day-by-day series (time-varying, follows admission; not used)",
+        "hepatomegaly2": "day-by-day series (time-varying, follows admission; not used)",
+        "hepatomegaly3": "day-by-day series (time-varying, follows admission; not used)",
+        "hepatomegaly4": "day-by-day series (time-varying, follows admission; not used)",
+        "hepatomegaly5": "day-by-day series (time-varying, follows admission; not used)",
+        "hepatomegaly6": "day-by-day series (time-varying, follows admission; not used)",
+        "hepatomegaly7": "day-by-day series (time-varying, follows admission; not used)",
+        "hepatomegaly8": "day-by-day series (time-varying, follows admission; not used)",
+        "hepatomegaly9": "day-by-day series (time-varying, follows admission; not used)",
+        "hepatomegaly10": "day-by-day series (time-varying, follows admission; not used)",
+        "Spleenomegaly2": "day-by-day series (time-varying, follows admission; not used)",
+        "Spleenomegaly3": "day-by-day series (time-varying, follows admission; not used)",
+        "Spleenomegaly4": "day-by-day series (time-varying, follows admission; not used)",
+        "Spleenomegaly5": "day-by-day series (time-varying, follows admission; not used)",
+        "Spleenomegaly6": "day-by-day series (time-varying, follows admission; not used)",
+        "Spleenomegaly7": "day-by-day series (time-varying, follows admission; not used)",
+        "Spleenomegaly8": "day-by-day series (time-varying, follows admission; not used)",
+        "Spleenomegaly9": "day-by-day series (time-varying, follows admission; not used)",
+        "Spleenomegaly10": "day-by-day series (time-varying, follows admission; not used)",
+        "Lymphadenopathy2": "day-by-day series (time-varying, follows admission; not used)",
+        "Lymphadenopathy3": "day-by-day series (time-varying, follows admission; not used)",
+        "Lymphadenopathy4": "day-by-day series (time-varying, follows admission; not used)",
+        "Lymphadenopathy5": "day-by-day series (time-varying, follows admission; not used)",
+        "Lymphadenopathy6": "day-by-day series (time-varying, follows admission; not used)",
+        "Lymphadenopathy7": "day-by-day series (time-varying, follows admission; not used)",
+        "Lymphadenopathy8": "day-by-day series (time-varying, follows admission; not used)",
+        "Lymphadenopathy9": "day-by-day series (time-varying, follows admission; not used)",
+        "Lymphadenopathy10": "day-by-day series (time-varying, follows admission; not used)",
+        "Photophobia2": "day-by-day series (time-varying, follows admission; not used)",
+        "Photophobia3": "day-by-day series (time-varying, follows admission; not used)",
+        "Photophobia4": "day-by-day series (time-varying, follows admission; not used)",
+        "Photophobia5": "day-by-day series (time-varying, follows admission; not used)",
+        "Photophobia6": "day-by-day series (time-varying, follows admission; not used)",
+        "Photophobia7": "day-by-day series (time-varying, follows admission; not used)",
+        "Photophobia8": "day-by-day series (time-varying, follows admission; not used)",
+        "Photophobia9": "day-by-day series (time-varying, follows admission; not used)",
+        "Photophobia10": "day-by-day series (time-varying, follows admission; not used)",
+        "Neckstiffness2": "day-by-day series (time-varying, follows admission; not used)",
+        "Neckstiffness3": "day-by-day series (time-varying, follows admission; not used)",
+        "Neckstiffness4": "day-by-day series (time-varying, follows admission; not used)",
+        "Neckstiffness5": "day-by-day series (time-varying, follows admission; not used)",
+        "Neckstiffness6": "day-by-day series (time-varying, follows admission; not used)",
+        "Neckstiffness7": "day-by-day series (time-varying, follows admission; not used)",
+        "Neckstiffness8": "day-by-day series (time-varying, follows admission; not used)",
+        "Neckstiffness9": "day-by-day series (time-varying, follows admission; not used)",
+        "Neckstiffness10": "day-by-day series (time-varying, follows admission; not used)",
+        "Confusion2": "day-by-day series (time-varying, follows admission; not used)",
+        "Confusion3": "day-by-day series (time-varying, follows admission; not used)",
+        "Confusion4": "day-by-day series (time-varying, follows admission; not used)",
+        "Confusion5": "day-by-day series (time-varying, follows admission; not used)",
+        "Confusion6": "day-by-day series (time-varying, follows admission; not used)",
+        "Confusion7": "day-by-day series (time-varying, follows admission; not used)",
+        "Confusion8": "day-by-day series (time-varying, follows admission; not used)",
+        "Confusion9": "day-by-day series (time-varying, follows admission; not used)",
+        "Confusion10": "day-by-day series (time-varying, follows admission; not used)",
+        "Cough2": "day-by-day series (time-varying, follows admission; not used)",
+        "Cough3": "day-by-day series (time-varying, follows admission; not used)",
+        "Cough4": "day-by-day series (time-varying, follows admission; not used)",
+        "Cough5": "day-by-day series (time-varying, follows admission; not used)",
+        "Cough6": "day-by-day series (time-varying, follows admission; not used)",
+        "Cough7": "day-by-day series (time-varying, follows admission; not used)",
+        "Cough8": "day-by-day series (time-varying, follows admission; not used)",
+        "Cough9": "day-by-day series (time-varying, follows admission; not used)",
+        "Cough10": "day-by-day series (time-varying, follows admission; not used)",
+        "Haemoptysis2": "day-by-day series (time-varying, follows admission; not used)",
+        "Haemoptysis3": "day-by-day series (time-varying, follows admission; not used)",
+        "Haemoptysis4": "day-by-day series (time-varying, follows admission; not used)",
+        "Haemoptysis5": "day-by-day series (time-varying, follows admission; not used)",
+        "Haemoptysis6": "day-by-day series (time-varying, follows admission; not used)",
+        "Haemoptysis7": "day-by-day series (time-varying, follows admission; not used)",
+        "Haemoptysis8": "day-by-day series (time-varying, follows admission; not used)",
+        "Haemoptysis9": "day-by-day series (time-varying, follows admission; not used)",
+        "Haemoptysis10": "day-by-day series (time-varying, follows admission; not used)",
+        "SOB2": "day-by-day series (time-varying, follows admission; not used)",
+        "SOB3": "day-by-day series (time-varying, follows admission; not used)",
+        "SOB4": "day-by-day series (time-varying, follows admission; not used)",
+        "SOB5": "day-by-day series (time-varying, follows admission; not used)",
+        "SOB6": "day-by-day series (time-varying, follows admission; not used)",
+        "SOB7": "day-by-day series (time-varying, follows admission; not used)",
+        "SOB8": "day-by-day series (time-varying, follows admission; not used)",
+        "SOB9": "day-by-day series (time-varying, follows admission; not used)",
+        "SOB10": "day-by-day series (time-varying, follows admission; not used)",
+        "Chestpain2": "day-by-day series (time-varying, follows admission; not used)",
+        "Chestpain3": "day-by-day series (time-varying, follows admission; not used)",
+        "Chestpain4": "day-by-day series (time-varying, follows admission; not used)",
+        "Chestpain5": "day-by-day series (time-varying, follows admission; not used)",
+        "Chestpain6": "day-by-day series (time-varying, follows admission; not used)",
+        "Chestpain7": "day-by-day series (time-varying, follows admission; not used)",
+        "Chestpain8": "day-by-day series (time-varying, follows admission; not used)",
+        "Chestpain9": "day-by-day series (time-varying, follows admission; not used)",
+        "Chestpain10": "day-by-day series (time-varying, follows admission; not used)",
+        "Pulserate2": "day-by-day series (time-varying, follows admission; not used)",
+        "Pulserate3": "day-by-day series (time-varying, follows admission; not used)",
+        "Pulserate4": "day-by-day series (time-varying, follows admission; not used)",
+        "Pulserate5": "day-by-day series (time-varying, follows admission; not used)",
+        "Pulserate6": "day-by-day series (time-varying, follows admission; not used)",
+        "Pulserate7": "day-by-day series (time-varying, follows admission; not used)",
+        "Pulserate8": "day-by-day series (time-varying, follows admission; not used)",
+        "Pulserate9": "day-by-day series (time-varying, follows admission; not used)",
+        "Pulserate10": "day-by-day series (time-varying, follows admission; not used)",
+        "SBP2": "day-by-day series (time-varying, follows admission; not used)",
+        "DBP2": "day-by-day series (time-varying, follows admission; not used)",
+        "SBP3": "day-by-day series (time-varying, follows admission; not used)",
+        "DBP3": "day-by-day series (time-varying, follows admission; not used)",
+        "SBP4": "day-by-day series (time-varying, follows admission; not used)",
+        "DBP4": "day-by-day series (time-varying, follows admission; not used)",
+        "SBP5": "day-by-day series (time-varying, follows admission; not used)",
+        "DBP5": "day-by-day series (time-varying, follows admission; not used)",
+        "SBP6": "day-by-day series (time-varying, follows admission; not used)",
+        "DBP6": "day-by-day series (time-varying, follows admission; not used)",
+        "SBP7": "day-by-day series (time-varying, follows admission; not used)",
+        "DBP7": "day-by-day series (time-varying, follows admission; not used)",
+        "SBP8": "day-by-day series (time-varying, follows admission; not used)",
+        "DBP8": "day-by-day series (time-varying, follows admission; not used)",
+        "SBP9": "day-by-day series (time-varying, follows admission; not used)",
+        "DBP9": "day-by-day series (time-varying, follows admission; not used)",
+        "SBP10": "day-by-day series (time-varying, follows admission; not used)",
+        "DBP10": "day-by-day series (time-varying, follows admission; not used)",
+        "Bleeding2": "day-by-day series (time-varying, follows admission; not used)",
+        "Bleeding3": "day-by-day series (time-varying, follows admission; not used)",
+        "Bleeding4": "day-by-day series (time-varying, follows admission; not used)",
+        "Bleeding5": "day-by-day series (time-varying, follows admission; not used)",
+        "Bleeding6": "day-by-day series (time-varying, follows admission; not used)",
+        "Bleeding7": "day-by-day series (time-varying, follows admission; not used)",
+        "Bleeding8": "day-by-day series (time-varying, follows admission; not used)",
+        "Bleeding9": "day-by-day series (time-varying, follows admission; not used)",
+        "Bleeding10": "day-by-day series (time-varying, follows admission; not used)",
+        "WBCcount": "laboratory variable (not used as a feature)",
+        "Ncount": "laboratory variable (not used as a feature)",
+        "N": "laboratory variable (not used as a feature)",
+        "Lcount": "laboratory variable (not used as a feature)",
+        "L": "laboratory variable (not used as a feature)",
+        "Plateletcount": "laboratory variable (not used as a feature)",
+        "PCV": "laboratory variable (not used as a feature)",
+        "RBC": "laboratory variable (not used as a feature)",
+        "CRP": "laboratory variable (not used as a feature)",
+        "ESR": "laboratory variable (not used as a feature)",
+        "Puscells": "laboratory variable (not used as a feature)",
+        "Redcells": "laboratory variable (not used as a feature)",
+        "Leucocytes": "laboratory variable (not used as a feature)",
+        "Granularcast": "laboratory variable (not used as a feature)",
+        "Albumin": "laboratory variable (not used as a feature)",
+        "Na": "laboratory variable (not used as a feature)",
+        "K": "laboratory variable (not used as a feature)",
+        "AST": "laboratory variable (not used as a feature)",
+        "ALT": "laboratory variable (not used as a feature)",
+        "T.Bilirubin": "laboratory variable (not used as a feature)",
+        "D.Bilirubin": "laboratory variable (not used as a feature)",
+        "@GT": "laboratory variable (not used as a feature)",
+        "S.creatinine": "laboratory variable (not used as a feature)",
+        "B.urea": "laboratory variable (not used as a feature)",
+        "Samylase": "laboratory variable (not used as a feature)",
+        "Sphosphate": "laboratory variable (not used as a feature)",
+        "ALP": "laboratory variable (not used as a feature)",
+        "PulseRate": "laboratory variable (not used as a feature)",
+        "PulseRhythem": "laboratory variable (not used as a feature)",
+        "WBC_first_day": "laboratory variable (not used as a feature)",
+        "WBCCount1": "day-by-day series (time-varying, follows admission; not used)",
+        "WBCcount2": "day-by-day series (time-varying, follows admission; not used)",
+        "WBCcount3": "day-by-day series (time-varying, follows admission; not used)",
+        "WBCcount4": "day-by-day series (time-varying, follows admission; not used)",
+        "WBCcount5": "day-by-day series (time-varying, follows admission; not used)",
+        "WBCcount6": "day-by-day series (time-varying, follows admission; not used)",
+        "WBCcount7": "day-by-day series (time-varying, follows admission; not used)",
+        "WBCcount8": "day-by-day series (time-varying, follows admission; not used)",
+        "WBCcount9": "day-by-day series (time-varying, follows admission; not used)",
+        "WBCcount10": "day-by-day series (time-varying, follows admission; not used)",
+        "Ncount2": "day-by-day series (time-varying, follows admission; not used)",
+        "Ncount3": "day-by-day series (time-varying, follows admission; not used)",
+        "Ncount4": "day-by-day series (time-varying, follows admission; not used)",
+        "Ncount5": "day-by-day series (time-varying, follows admission; not used)",
+        "Ncount6": "day-by-day series (time-varying, follows admission; not used)",
+        "Ncount7": "day-by-day series (time-varying, follows admission; not used)",
+        "Ncount8": "day-by-day series (time-varying, follows admission; not used)",
+        "Ncount9": "day-by-day series (time-varying, follows admission; not used)",
+        "Ncount10": "day-by-day series (time-varying, follows admission; not used)",
+        "N2": "day-by-day series (time-varying, follows admission; not used)",
+        "N3": "day-by-day series (time-varying, follows admission; not used)",
+        "N4": "day-by-day series (time-varying, follows admission; not used)",
+        "N5": "day-by-day series (time-varying, follows admission; not used)",
+        "N6": "day-by-day series (time-varying, follows admission; not used)",
+        "N7": "day-by-day series (time-varying, follows admission; not used)",
+        "N8": "day-by-day series (time-varying, follows admission; not used)",
+        "N9": "day-by-day series (time-varying, follows admission; not used)",
+        "N10": "day-by-day series (time-varying, follows admission; not used)",
+        "Lcount2": "day-by-day series (time-varying, follows admission; not used)",
+        "Lcount3": "day-by-day series (time-varying, follows admission; not used)",
+        "Lcount4": "day-by-day series (time-varying, follows admission; not used)",
+        "Lcount5": "day-by-day series (time-varying, follows admission; not used)",
+        "Lcount6": "day-by-day series (time-varying, follows admission; not used)",
+        "Lcount7": "day-by-day series (time-varying, follows admission; not used)",
+        "Lcount8": "day-by-day series (time-varying, follows admission; not used)",
+        "Lcount9": "day-by-day series (time-varying, follows admission; not used)",
+        "Lcount10": "day-by-day series (time-varying, follows admission; not used)",
+        "L2": "day-by-day series (time-varying, follows admission; not used)",
+        "L3": "day-by-day series (time-varying, follows admission; not used)",
+        "L4": "day-by-day series (time-varying, follows admission; not used)",
+        "L5": "day-by-day series (time-varying, follows admission; not used)",
+        "L6": "day-by-day series (time-varying, follows admission; not used)",
+        "L7": "day-by-day series (time-varying, follows admission; not used)",
+        "L8": "day-by-day series (time-varying, follows admission; not used)",
+        "L9": "day-by-day series (time-varying, follows admission; not used)",
+        "L10": "day-by-day series (time-varying, follows admission; not used)",
+        "Platelet2": "day-by-day series (time-varying, follows admission; not used)",
+        "Platelet3": "day-by-day series (time-varying, follows admission; not used)",
+        "Platelet4": "day-by-day series (time-varying, follows admission; not used)",
+        "Platelet5": "day-by-day series (time-varying, follows admission; not used)",
+        "Platelet6": "day-by-day series (time-varying, follows admission; not used)",
+        "Platelet7": "day-by-day series (time-varying, follows admission; not used)",
+        "Platelet8": "day-by-day series (time-varying, follows admission; not used)",
+        "Platelet9": "day-by-day series (time-varying, follows admission; not used)",
+        "Platelet10": "day-by-day series (time-varying, follows admission; not used)",
+        "PCV2": "day-by-day series (time-varying, follows admission; not used)",
+        "PCV3": "day-by-day series (time-varying, follows admission; not used)",
+        "PCV4": "day-by-day series (time-varying, follows admission; not used)",
+        "PCV5": "day-by-day series (time-varying, follows admission; not used)",
+        "PCV6": "day-by-day series (time-varying, follows admission; not used)",
+        "PCV7": "day-by-day series (time-varying, follows admission; not used)",
+        "PCV8": "day-by-day series (time-varying, follows admission; not used)",
+        "PCV9": "day-by-day series (time-varying, follows admission; not used)",
+        "PCV10": "day-by-day series (time-varying, follows admission; not used)",
+        "RBC2": "day-by-day series (time-varying, follows admission; not used)",
+        "RBC3": "day-by-day series (time-varying, follows admission; not used)",
+        "RBC4": "day-by-day series (time-varying, follows admission; not used)",
+        "RBC5": "day-by-day series (time-varying, follows admission; not used)",
+        "RBC6": "day-by-day series (time-varying, follows admission; not used)",
+        "RBC7": "day-by-day series (time-varying, follows admission; not used)",
+        "RBC8": "day-by-day series (time-varying, follows admission; not used)",
+        "RBC9": "day-by-day series (time-varying, follows admission; not used)",
+        "RBC10": "day-by-day series (time-varying, follows admission; not used)",
+        "CRP2": "day-by-day series (time-varying, follows admission; not used)",
+        "CRP3": "day-by-day series (time-varying, follows admission; not used)",
+        "CRP4": "day-by-day series (time-varying, follows admission; not used)",
+        "CRP5": "day-by-day series (time-varying, follows admission; not used)",
+        "CRP6": "day-by-day series (time-varying, follows admission; not used)",
+        "CRP7": "day-by-day series (time-varying, follows admission; not used)",
+        "CRP8": "day-by-day series (time-varying, follows admission; not used)",
+        "CRP9": "day-by-day series (time-varying, follows admission; not used)",
+        "CRP10": "day-by-day series (time-varying, follows admission; not used)",
+        "ESR2": "day-by-day series (time-varying, follows admission; not used)",
+        "ESR3": "day-by-day series (time-varying, follows admission; not used)",
+        "ESR4": "day-by-day series (time-varying, follows admission; not used)",
+        "ESR5": "day-by-day series (time-varying, follows admission; not used)",
+        "ESR6": "day-by-day series (time-varying, follows admission; not used)",
+        "ESR7": "day-by-day series (time-varying, follows admission; not used)",
+        "ESR8": "day-by-day series (time-varying, follows admission; not used)",
+        "ESR9": "day-by-day series (time-varying, follows admission; not used)",
+        "ESR10": "day-by-day series (time-varying, follows admission; not used)",
+        "Puscells2": "day-by-day series (time-varying, follows admission; not used)",
+        "Puscells3": "day-by-day series (time-varying, follows admission; not used)",
+        "Puscells4": "day-by-day series (time-varying, follows admission; not used)",
+        "Puscells5": "day-by-day series (time-varying, follows admission; not used)",
+        "Puscells6": "day-by-day series (time-varying, follows admission; not used)",
+        "Puscells7": "day-by-day series (time-varying, follows admission; not used)",
+        "Puscells8": "day-by-day series (time-varying, follows admission; not used)",
+        "Puscells9": "day-by-day series (time-varying, follows admission; not used)",
+        "Puscells10": "day-by-day series (time-varying, follows admission; not used)",
+        "Redcells2": "day-by-day series (time-varying, follows admission; not used)",
+        "Redcells3": "day-by-day series (time-varying, follows admission; not used)",
+        "Redcells4": "day-by-day series (time-varying, follows admission; not used)",
+        "Redcells5": "day-by-day series (time-varying, follows admission; not used)",
+        "Redcells6": "day-by-day series (time-varying, follows admission; not used)",
+        "Redcells7": "day-by-day series (time-varying, follows admission; not used)",
+        "Redcells8": "day-by-day series (time-varying, follows admission; not used)",
+        "Redcells9": "day-by-day series (time-varying, follows admission; not used)",
+        "Redcells10": "day-by-day series (time-varying, follows admission; not used)",
+        "Albumin2": "day-by-day series (time-varying, follows admission; not used)",
+        "Albumin3": "day-by-day series (time-varying, follows admission; not used)",
+        "Albumin4": "day-by-day series (time-varying, follows admission; not used)",
+        "Albumin5": "day-by-day series (time-varying, follows admission; not used)",
+        "Albumin6": "day-by-day series (time-varying, follows admission; not used)",
+        "Albumin7": "day-by-day series (time-varying, follows admission; not used)",
+        "Albumin8": "day-by-day series (time-varying, follows admission; not used)",
+        "Albumin9": "day-by-day series (time-varying, follows admission; not used)",
+        "Albumin10": "day-by-day series (time-varying, follows admission; not used)",
+        "Na2": "day-by-day series (time-varying, follows admission; not used)",
+        "Na3": "day-by-day series (time-varying, follows admission; not used)",
+        "Na4": "day-by-day series (time-varying, follows admission; not used)",
+        "Na5": "day-by-day series (time-varying, follows admission; not used)",
+        "Na6": "day-by-day series (time-varying, follows admission; not used)",
+        "Na7": "day-by-day series (time-varying, follows admission; not used)",
+        "Na8": "day-by-day series (time-varying, follows admission; not used)",
+        "Na9": "day-by-day series (time-varying, follows admission; not used)",
+        "Na10": "day-by-day series (time-varying, follows admission; not used)",
+        "K2": "day-by-day series (time-varying, follows admission; not used)",
+        "K3": "day-by-day series (time-varying, follows admission; not used)",
+        "K4": "day-by-day series (time-varying, follows admission; not used)",
+        "K5": "day-by-day series (time-varying, follows admission; not used)",
+        "K6": "day-by-day series (time-varying, follows admission; not used)",
+        "K7": "day-by-day series (time-varying, follows admission; not used)",
+        "K8": "day-by-day series (time-varying, follows admission; not used)",
+        "K9": "day-by-day series (time-varying, follows admission; not used)",
+        "K10": "day-by-day series (time-varying, follows admission; not used)",
+        "AST2": "day-by-day series (time-varying, follows admission; not used)",
+        "AST3": "day-by-day series (time-varying, follows admission; not used)",
+        "AST4": "day-by-day series (time-varying, follows admission; not used)",
+        "AST5": "day-by-day series (time-varying, follows admission; not used)",
+        "AST6": "day-by-day series (time-varying, follows admission; not used)",
+        "AST7": "day-by-day series (time-varying, follows admission; not used)",
+        "AST8": "day-by-day series (time-varying, follows admission; not used)",
+        "AST9": "day-by-day series (time-varying, follows admission; not used)",
+        "AST10": "day-by-day series (time-varying, follows admission; not used)",
+        "ALT2": "day-by-day series (time-varying, follows admission; not used)",
+        "ALT3": "day-by-day series (time-varying, follows admission; not used)",
+        "ALT4": "day-by-day series (time-varying, follows admission; not used)",
+        "ALT5": "day-by-day series (time-varying, follows admission; not used)",
+        "ALT6": "day-by-day series (time-varying, follows admission; not used)",
+        "ALT7": "day-by-day series (time-varying, follows admission; not used)",
+        "ALT8": "day-by-day series (time-varying, follows admission; not used)",
+        "ALT9": "day-by-day series (time-varying, follows admission; not used)",
+        "ALT10": "day-by-day series (time-varying, follows admission; not used)",
+        "T.Bilirub2": "day-by-day series (time-varying, follows admission; not used)",
+        "T.Bilirub3": "day-by-day series (time-varying, follows admission; not used)",
+        "T.Bilirub4": "day-by-day series (time-varying, follows admission; not used)",
+        "T.Bilirub5": "day-by-day series (time-varying, follows admission; not used)",
+        "T.Bilirub6": "day-by-day series (time-varying, follows admission; not used)",
+        "T.Bilirub7": "day-by-day series (time-varying, follows admission; not used)",
+        "T.Bilirub8": "day-by-day series (time-varying, follows admission; not used)",
+        "T.Bilirub9": "day-by-day series (time-varying, follows admission; not used)",
+        "T.Bilirub10": "day-by-day series (time-varying, follows admission; not used)",
+        "D.Bilirub2": "day-by-day series (time-varying, follows admission; not used)",
+        "D.Bilirub3": "day-by-day series (time-varying, follows admission; not used)",
+        "D.Bilirub4": "day-by-day series (time-varying, follows admission; not used)",
+        "D.Bilirub5": "day-by-day series (time-varying, follows admission; not used)",
+        "D.Bilirub6": "day-by-day series (time-varying, follows admission; not used)",
+        "D.Bilirub7": "day-by-day series (time-varying, follows admission; not used)",
+        "D.Bilirub8": "day-by-day series (time-varying, follows admission; not used)",
+        "D.Bilirub9": "day-by-day series (time-varying, follows admission; not used)",
+        "D.Bilirub10": "day-by-day series (time-varying, follows admission; not used)",
+        "GT2": "day-by-day series (time-varying, follows admission; not used)",
+        "GT3": "day-by-day series (time-varying, follows admission; not used)",
+        "GT4": "day-by-day series (time-varying, follows admission; not used)",
+        "GT5": "day-by-day series (time-varying, follows admission; not used)",
+        "GT6": "day-by-day series (time-varying, follows admission; not used)",
+        "GT7": "day-by-day series (time-varying, follows admission; not used)",
+        "GT8": "day-by-day series (time-varying, follows admission; not used)",
+        "GT9": "day-by-day series (time-varying, follows admission; not used)",
+        "GT10": "day-by-day series (time-varying, follows admission; not used)",
+        "S.Cr2": "day-by-day series (time-varying, follows admission; not used)",
+        "S.Cr3": "day-by-day series (time-varying, follows admission; not used)",
+        "S.Cr4": "day-by-day series (time-varying, follows admission; not used)",
+        "S.Cr5": "day-by-day series (time-varying, follows admission; not used)",
+        "S.Cr6": "day-by-day series (time-varying, follows admission; not used)",
+        "S.Cr7": "day-by-day series (time-varying, follows admission; not used)",
+        "S.Cr8": "day-by-day series (time-varying, follows admission; not used)",
+        "S.Cr9": "day-by-day series (time-varying, follows admission; not used)",
+        "S.Cr10": "day-by-day series (time-varying, follows admission; not used)",
+        "B.Urea2": "day-by-day series (time-varying, follows admission; not used)",
+        "B.Urea3": "day-by-day series (time-varying, follows admission; not used)",
+        "B.Urea4": "day-by-day series (time-varying, follows admission; not used)",
+        "B.Urea5": "day-by-day series (time-varying, follows admission; not used)",
+        "B.Urea6": "day-by-day series (time-varying, follows admission; not used)",
+        "B.Urea7": "day-by-day series (time-varying, follows admission; not used)",
+        "B.Urea8": "day-by-day series (time-varying, follows admission; not used)",
+        "B.Urea9": "day-by-day series (time-varying, follows admission; not used)",
+        "B.Urea10": "day-by-day series (time-varying, follows admission; not used)",
+        "S.amylase2": "day-by-day series (time-varying, follows admission; not used)",
+        "S.amylase3": "day-by-day series (time-varying, follows admission; not used)",
+        "S.amylase4": "day-by-day series (time-varying, follows admission; not used)",
+        "S.amylase5": "day-by-day series (time-varying, follows admission; not used)",
+        "S.amylase6": "day-by-day series (time-varying, follows admission; not used)",
+        "S.amylase7": "day-by-day series (time-varying, follows admission; not used)",
+        "S.amylase8": "day-by-day series (time-varying, follows admission; not used)",
+        "S.amylase9": "day-by-day series (time-varying, follows admission; not used)",
+        "S.amylase10": "day-by-day series (time-varying, follows admission; not used)",
+        "S.phosphate2": "day-by-day series (time-varying, follows admission; not used)",
+        "S.phosphate3": "day-by-day series (time-varying, follows admission; not used)",
+        "S.phosphate4": "day-by-day series (time-varying, follows admission; not used)",
+        "S.phosphate5": "day-by-day series (time-varying, follows admission; not used)",
+        "S.phosphate6": "day-by-day series (time-varying, follows admission; not used)",
+        "S.phosphate7": "day-by-day series (time-varying, follows admission; not used)",
+        "S.phosphate8": "day-by-day series (time-varying, follows admission; not used)",
+        "S.phosphate9": "day-by-day series (time-varying, follows admission; not used)",
+        "S.phosphate10": "day-by-day series (time-varying, follows admission; not used)",
+        "ALP2": "day-by-day series (time-varying, follows admission; not used)",
+        "ALP3": "day-by-day series (time-varying, follows admission; not used)",
+        "ALP4": "day-by-day series (time-varying, follows admission; not used)",
+        "ALP5": "day-by-day series (time-varying, follows admission; not used)",
+        "ALP6": "day-by-day series (time-varying, follows admission; not used)",
+        "ALP7": "day-by-day series (time-varying, follows admission; not used)",
+        "ALP8": "day-by-day series (time-varying, follows admission; not used)",
+        "ALP9": "day-by-day series (time-varying, follows admission; not used)",
+        "ALP10": "day-by-day series (time-varying, follows admission; not used)",
+        "WPqPCRDiagnosis": "microbiological or serological result (defines the diagnosis)",
+        "UrineqPCRDiagnosis": "microbiological or serological result (defines the diagnosis)",
+        "CultureqPCRDia": "microbiological or serological result (defines the diagnosis)",
+        "SerumqPCRDiagnosis": "microbiological or serological result (defines the diagnosis)",
+        "UFqPCRDiag": "microbiological or serological result (defines the diagnosis)",
+        "Isolate": "microbiological or serological result (defines the diagnosis)",
+        "MAT_set_1": "microbiological or serological result (defines the diagnosis)",
+        "Pomona": "microbiological or serological result (defines the diagnosis)",
+        "Bratislava": "microbiological or serological result (defines the diagnosis)",
+        "Canicola": "microbiological or serological result (defines the diagnosis)",
+        "Icterohaemorrhagiae": "microbiological or serological result (defines the diagnosis)",
+        "Mankarso": "microbiological or serological result (defines the diagnosis)",
+        "Georgia": "microbiological or serological result (defines the diagnosis)",
+        "Pyrogene": "microbiological or serological result (defines the diagnosis)",
+        "Bataviae": "microbiological or serological result (defines the diagnosis)",
+        "Wolfii": "microbiological or serological result (defines the diagnosis)",
+        "Geyaweera": "microbiological or serological result (defines the diagnosis)",
+        "Weerasinghe": "microbiological or serological result (defines the diagnosis)",
+        "Ceylonica": "microbiological or serological result (defines the diagnosis)",
+        "Alice": "microbiological or serological result (defines the diagnosis)",
+        "Patoc": "microbiological or serological result (defines the diagnosis)",
+        "Autumnalis": "microbiological or serological result (defines the diagnosis)",
+        "Alex": "microbiological or serological result (defines the diagnosis)",
+        "Ballum": "microbiological or serological result (defines the diagnosis)",
+        "Djasiman": "microbiological or serological result (defines the diagnosis)",
+        "Australis": "microbiological or serological result (defines the diagnosis)",
+        "Tarassovi": "microbiological or serological result (defines the diagnosis)",
+        "Ratnapura": "microbiological or serological result (defines the diagnosis)",
+        "Borincana": "microbiological or serological result (defines the diagnosis)",
+        "Celledoni": "microbiological or serological result (defines the diagnosis)",
+        "Grippotyphosa": "microbiological or serological result (defines the diagnosis)",
+        "PomonaF": "laboratory variable (not used as a feature)",
+        "BratislavaF": "laboratory variable (not used as a feature)",
+        "CanicolaF": "laboratory variable (not used as a feature)",
+        "IcterohaemorrhagiaeF": "laboratory variable (not used as a feature)",
+        "MankarsoF": "laboratory variable (not used as a feature)",
+        "GeorgiaF": "laboratory variable (not used as a feature)",
+        "PyrogeneF": "laboratory variable (not used as a feature)",
+        "BataviaeF": "laboratory variable (not used as a feature)",
+        "WolfiiF": "laboratory variable (not used as a feature)",
+        "GeyaweeraF": "laboratory variable (not used as a feature)",
+        "WeerasingheF": "laboratory variable (not used as a feature)",
+        "CeylonicaF": "laboratory variable (not used as a feature)",
+        "AliceF": "laboratory variable (not used as a feature)",
+        "PatocF": "laboratory variable (not used as a feature)",
+        "AutumnalisF": "laboratory variable (not used as a feature)",
+        "AlexF": "laboratory variable (not used as a feature)",
+        "BallumF": "laboratory variable (not used as a feature)",
+        "DjasimanF": "laboratory variable (not used as a feature)",
+        "AustralisF": "laboratory variable (not used as a feature)",
+        "TarassoviF": "laboratory variable (not used as a feature)",
+        "RatnapuraF": "laboratory variable (not used as a feature)",
+        "BorincanaF": "laboratory variable (not used as a feature)",
+        "CelledoniF": "laboratory variable (not used as a feature)",
+        "GrippotyphosaF": "laboratory variable (not used as a feature)",
+        "Acu_L.interrogansserovarBratislavastr.JezBratislava": "laboratory variable (not used as a feature)",
+        "Acu_L.interrogansserovarAutumnalisstr.AkiyamiA": "laboratory variable (not used as a feature)",
+        "Acu_L.weiliiserovarCelledonistr.Celledoni": "laboratory variable (not used as a feature)",
+        "Acu_L.interrogansserovarCanicolastr.Ruebush": "laboratory variable (not used as a feature)",
+        "Acu_L.interrogansserovarIcterohaemorrhagiaestr.RGA": "laboratory variable (not used as a feature)",
+        "Acu_L.interrogansserovarMankarsostr.Mankarso": "laboratory variable (not used as a feature)",
+        "Acu_L.santarosaiserovarGeorgiastr.LT117": "day-by-day series (time-varying, follows admission; not used)",
+        "Acu_L.santarosaiserovarPyrogenesstr.Salinem": "laboratory variable (not used as a feature)",
+        "Acu_L.interrogansserovarBataviaestr.VanTienan": "laboratory variable (not used as a feature)",
+        "Acu_L.interrogansserovarAlexistr.616": "day-by-day series (time-varying, follows admission; not used)",
+        "Acu_L.interrogansserovarAustralisstr.Ballico": "laboratory variable (not used as a feature)",
+        "Acu_L.interrogansserovarwolfiistr.3705": "day-by-day series (time-varying, follows admission; not used)",
+        "Acu_L.interrogansserovarWeerasinghe": "laboratory variable (not used as a feature)",
+        "Acu_Patoc": "laboratory variable (not used as a feature)",
+        "FU_L.interrogansserovarBratislavastr.JezBratislava": "laboratory variable (not used as a feature)",
+        "FU_L.interrogansserovarAutumnalisstr.AkiyamiA": "laboratory variable (not used as a feature)",
+        "FU_L.weiliiserovarCelledonistr.Celledoni": "laboratory variable (not used as a feature)",
+        "FU_L.interrogansserovarCanicolastr.Ruebush": "laboratory variable (not used as a feature)",
+        "FU_L.interrogansserovarIcterohaemorrhagiaestr.RGA": "laboratory variable (not used as a feature)",
+        "FU_L.interrogansserovarMankarsostr.Mankarso": "laboratory variable (not used as a feature)",
+        "FU_L.santarosaiserovarGeorgiastr.LT117": "day-by-day series (time-varying, follows admission; not used)",
+        "FU_L.santarosaiserovarPyrogenesstr.Salinem": "laboratory variable (not used as a feature)",
+        "FU_L.interrogansserovarBataviaestr.VanTienan": "laboratory variable (not used as a feature)",
+        "FU_L.interrogansserovarAlexistr.616": "day-by-day series (time-varying, follows admission; not used)",
+        "FU_L.interrogansserovarAustralisstr.Ballico": "laboratory variable (not used as a feature)",
+        "FU_L.interrogansserovarwolfiistr.3705": "day-by-day series (time-varying, follows admission; not used)",
+        "FU_L.interrogansserovarWeerasinghe": "laboratory variable (not used as a feature)",
+        "FU_Patoc": "laboratory variable (not used as a feature)",
+        "Final": "microbiological or serological result (defines the diagnosis)"
+      },
+      "title": "Febrile patients in Sri Lanka, leptospirosis confirmation (2016–2019)",
+      "source": "Mendeley Data zmxmp42g9p",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/zmxmp42g9p/1",
+        "https://data.mendeley.com/public-api/zip/zmxmp42g9p/download/1"
+      ],
+      "licence": "CC BY 4.0 (stated on Mendeley Data)",
+      "citation": "Hospital-based study of febrile patients in Sri Lanka, 2016–2019 (Mendeley Data zmxmp42g9p).",
+      "raw_files": [
+        "leptospirosis_srilanka.sav"
+      ],
+      "raw_description": "1,734 records, 806 variables (SPSS .sav)",
+      "notes": []
+    },
+    "brazil_sinan_arboviral": {
+      "processed_file": "data/processed/brazil_sinan_sample.csv",
+      "rows_raw": 6732542,
+      "rows_used": 149849,
+      "sampling": "random Bernoulli sample, fraction 0.0223, seed 42",
+      "label_counts": {
+        "dengue": 95927,
+        "neither": 46618,
+        "chikungunya": 7304
+      },
+      "features_used": 23,
+      "excluded_columns": {
+        "RESUL_SORO": "serology result (laboratory; defines the diagnosis)",
+        "RESUL_NS1": "NS1 result (laboratory; defines the diagnosis)",
+        "RESUL_VI_N": "virus isolation result (laboratory)",
+        "RESUL_PCR_": "PCR result (laboratory; defines the diagnosis)",
+        "HISTOPA_N": "histopathology (laboratory)",
+        "IMUNOH_N": "immunohistochemistry (laboratory)",
+        "LEUCOPENIA": "laboratory-derived finding (white-cell count)",
+        "HOSPITALIZ": "severity / outcome-related field",
+        "EVOLUCAO": "outcome field (follows the diagnosis)",
+        "TPAUTOCTO": "case classification detail (defines the diagnosis)",
+        "COUFINF": "municipality of infection (geography; excluded)",
+        "COPAISINF": "country of infection (geography; excluded)",
+        "COMUNINF": "municipality of infection (geography; excluded)",
+        "DT_NOTIFIC": "date field (time leakage)",
+        "DT_SIN_PRI": "date field (time leakage)",
+        "DT_NASC": "date of birth (identifier-like; age used instead)",
+        "DT_INVEST": "date field",
+        "DT_ENCERRA": "closing date (follows the diagnosis)",
+        "ID_AGRAVO": "record identifier",
+        "ID_MUNICIP": "geography identifier",
+        "ID_UNIDADE": "health-unit identifier",
+        "ID_REGIONA": "geography identifier",
+        "ID_MN_RESI": "geography identifier",
+        "ID_RG_RESI": "geography identifier",
+        "ID_PAIS": "geography identifier",
+        "SG_UF": "geography identifier",
+        "SG_UF_NOT": "geography identifier",
+        "CS_RACA": "not clinical (kept out for simplicity)",
+        "CS_ESCOL_N": "not clinical (kept out for simplicity)",
+        "SEM_NOT": "time field",
+        "SEM_PRI": "time field",
+        "NU_ANO": "year (time leakage)"
+      },
+      "feature_map": {
+        "Fever": {
+          "source_column": "FEBRE"
+        },
+        "Myalgia": {
+          "source_column": "MIALGIA"
+        },
+        "Headache": {
+          "source_column": "CEFALEIA"
+        },
+        "Rash": {
+          "source_column": "EXANTEMA"
+        },
+        "Vomiting": {
+          "source_column": "VOMITO"
+        },
+        "Nausea": {
+          "source_column": "NAUSEA"
+        },
+        "Back pain": {
+          "source_column": "DOR_COSTAS"
+        },
+        "Conjunctivitis": {
+          "source_column": "CONJUNTVIT"
+        },
+        "Arthritis": {
+          "source_column": "ARTRITE"
+        },
+        "Arthralgia": {
+          "source_column": "ARTRALGIA"
+        },
+        "Petechiae": {
+          "source_column": "PETEQUIA_N"
+        },
+        "Tourniquet/lace test": {
+          "source_column": "LACO"
+        },
+        "Retro-orbital pain": {
+          "source_column": "DOR_RETRO"
+        },
+        "Diabetes": {
+          "source_column": "DIABETES"
+        },
+        "Haematological disease": {
+          "source_column": "HEMATOLOG"
+        },
+        "Liver disease": {
+          "source_column": "HEPATOPAT"
+        },
+        "Kidney disease": {
+          "source_column": "RENAL"
+        },
+        "Hypertension": {
+          "source_column": "HIPERTENSA"
+        },
+        "Peptic ulcer": {
+          "source_column": "ACIDO_PEPT"
+        },
+        "Autoimmune disease": {
+          "source_column": "AUTO_IMUNE"
+        }
+      },
+      "title": "Brazil SINAN notifications: dengue and chikungunya",
+      "source": "Mendeley Data 2d3kr8zynf (pre-processed SINAN notifications, Brazil 2013–2020)",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/2d3kr8zynf/1",
+        "https://data.mendeley.com/public-api/zip/2d3kr8zynf/download/1"
+      ],
+      "licence": "CC BY 4.0 (stated on Mendeley Data)",
+      "citation": "Pre-processed SINAN (Brazilian national notifiable-disease system) data, 2013–2020, on Mendeley Data 2d3kr8zynf.",
+      "raw_files": [],
+      "raw_description": "6,732,542 rows, 56 columns; CLASSI_FIN: Dengue 4,307,513 / Discarded-Inconclusive 2,100,029 / Chikungunya 325,000",
+      "notes": [
+        "Surveillance data, not a triage population. Labels are the national case classification."
+      ]
+    }
+  },
+  "built_with": {
+    "seed": 42
+  }
+}

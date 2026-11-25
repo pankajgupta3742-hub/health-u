@@ -1,0 +1,104 @@
+{
+  "model": "dengue",
+  "task": "binary",
+  "classes": [
+    "0",
+    "1"
+  ],
+  "features": [
+    {
+      "name": "Age",
+      "type": "numeric",
+      "default": 50.0,
+      "min": 1.0,
+      "max": 87.0
+    },
+    {
+      "name": "Sex",
+      "type": "binary",
+      "default": 1.0
+    },
+    {
+      "name": "Work",
+      "type": "numeric",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 2.0
+    },
+    {
+      "name": "Systolic BP",
+      "type": "numeric",
+      "default": 120.0,
+      "min": 70.0,
+      "max": 200.0
+    },
+    {
+      "name": "Diastolic BP",
+      "type": "numeric",
+      "default": 80.0,
+      "min": 50.0,
+      "max": 120.0
+    },
+    {
+      "name": "Pulse",
+      "type": "numeric",
+      "default": 80.0,
+      "min": 50.0,
+      "max": 120.0
+    },
+    {
+      "name": "Cough",
+      "type": "binary",
+      "default": 0.0
+    },
+    {
+      "name": "Fever",
+      "type": "numeric",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 2.0
+    },
+    {
+      "name": "Headache",
+      "type": "binary",
+      "default": 0.0
+    },
+    {
+      "name": "Muscle pain",
+      "type": "binary",
+      "default": 1.0
+    },
+    {
+      "name": "Bleeding",
+      "type": "binary",
+      "default": 0.0
+    },
+    {
+      "name": "Skinrash",
+      "type": "binary",
+      "default": 1.0
+    },
+    {
+      "name": "Vomiting",
+      "type": "numeric",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 2.0
+    },
+    {
+      "name": "Diarrhoea",
+      "type": "binary",
+      "default": 1.0
+    },
+    {
+      "name": "Fatigue",
+      "type": "binary",
+      "default": 1.0
+    },
+    {
+      "name": "Rapid breathing",
+      "type": "binary",
+      "default": 1.0
+    }
+  ]
+}

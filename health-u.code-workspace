@@ -1,0 +1,48 @@
+{
+  "folders": [
+    {
+      "name": "Health-U",
+      "path": "."
+    },
+    {
+      "name": "Backend (API)",
+      "path": "backend"
+    },
+    {
+      "name": "Frontend (web)",
+      "path": "frontend"
+    },
+    {
+      "name": "Docs",
+      "path": "docs"
+    }
+  ],
+  "settings": {
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "files.exclude": {
+      "**/__pycache__": true,
+      "**/.pytest_cache": true,
+      "**/node_modules": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/.venv": true
+    },
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestArgs": [
+      "tests"
+    ],
+    "python.testing.cwd": "${workspaceFolder:Backend (API)}",
+    "python.terminal.activateEnvironment": true,
+    "editor.formatOnSave": false
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-python.python",
+      "ms-python.vscode-pylance",
+      "ms-python.debugpy"
+    ]
+  }
+}

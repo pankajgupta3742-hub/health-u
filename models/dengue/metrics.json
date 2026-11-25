@@ -1,0 +1,86 @@
+{
+  "model": "dengue",
+  "selected_algorithm": "random_forest",
+  "candidate_cv": {
+    "logistic_regression": {
+      "cv_roc_auc_mean": 0.9685,
+      "cv_roc_auc_sd": 0.0326
+    },
+    "random_forest": {
+      "cv_roc_auc_mean": 0.9785,
+      "cv_roc_auc_sd": 0.0243
+    },
+    "xgboost": {
+      "cv_roc_auc_mean": 0.9719,
+      "cv_roc_auc_sd": 0.0303
+    }
+  },
+  "n_rows": 308,
+  "n_train": 231,
+  "n_test": 77,
+  "class_counts_all": {
+    "0": 103,
+    "1": 205
+  },
+  "class_counts_test": {
+    "0": 26,
+    "1": 51
+  },
+  "classes": [
+    "0",
+    "1"
+  ],
+  "task": "binary",
+  "features_used": 16,
+  "numeric_features": [
+    "Age",
+    "Sex",
+    "Work",
+    "Systolic BP",
+    "Diastolic BP",
+    "Pulse",
+    "Cough",
+    "Fever",
+    "Headache",
+    "Muscle pain",
+    "Bleeding",
+    "Skinrash",
+    "Vomiting",
+    "Diarrhoea",
+    "Fatigue",
+    "Rapid breathing"
+  ],
+  "categorical_features": [],
+  "dropped_features": {},
+  "cv_folds": 5,
+  "seed": 42,
+  "versions": {
+    "scikit_learn": "1.6.1",
+    "xgboost": "3.4.1"
+  },
+  "train_seconds": 3.3,
+  "roc_auc": 0.9827,
+  "roc_auc_95ci": [
+    0.9417,
+    1.0
+  ],
+  "pr_auc": 0.9887,
+  "accuracy": 0.974,
+  "balanced_accuracy": 0.971,
+  "sensitivity": 0.9804,
+  "specificity": 0.9615,
+  "ppv": 0.9804,
+  "npv": 0.9615,
+  "f1": 0.9804,
+  "brier": 0.0321,
+  "confusion_matrix_threshold_0.5": {
+    "tn": 25,
+    "fp": 1,
+    "fn": 1,
+    "tp": 50
+  },
+  "decision_threshold": 0.5,
+  "positive_class": "1",
+  "status": "research",
+  "status_reason": "Trained and evaluated on a public dataset. Not clinically validated."
+}

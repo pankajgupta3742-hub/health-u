@@ -1,0 +1,842 @@
+# Model card: Leptospirosis (confirmed)
+
+**Model key:** `leptospirosis` · **Task:** binary · **Trained:** 2026-11-23
+**Status: RESEARCH PROTOTYPE**
+
+Trained and evaluated on a public dataset. Not clinically validated.
+
+> This model is trained on public retrospective data. It has **not** been clinically validated, prospectively
+> tested, or approved for diagnosis or treatment decisions. The language model in Health-U never sets urgency or
+> produces a diagnosis; urgency comes only from the rule engine.
+
+## Intended use
+Estimate leptospirosis likelihood in febrile patients from admission symptoms and environmental exposure history.
+
+**Not intended for:** diagnosis, treatment, triage on its own, use outside the populations described under
+"Data", or any setting where a wrong output could delay care.
+
+## Data
+- **Dataset:** Febrile patients in Sri Lanka, leptospirosis confirmation (2016–2019)
+- **Source:** Mendeley Data zmxmp42g9p
+- **Licence:** CC BY 4.0 (stated on Mendeley Data)
+- **Citation:** Hospital-based study of febrile patients in Sri Lanka, 2016–2019 (Mendeley Data zmxmp42g9p).
+- **Raw size:** 1,734 records, 806 variables (SPSS .sav)
+- **Rows used:** 1734 (train 1300, test 434; stratified 75/25 split, seed 42)
+- **Class counts (all rows):** {'0': 1143, '1': 591}
+- **Class counts (test):** {'0': 286, '1': 148}
+- **Processed file:** `data/processed/srilanka_leptospirosis.csv`
+- **Manifest:** `data/dataset_manifest.json`
+
+**Label:** Final diagnosis 'Confirmed' (1) versus 'Not detected' (0), per the dataset's final classification. Mapping verified against the .sav value labels (1 = Confirmed, 2 = Not detected; 591 and 1,143 rows).
+
+**Input requirements:** Clinical and exposure inputs only; no laboratory result is required.
+
+### Features used (57)
+- Numeric: 57; categorical: 0
+- Excluded or dropped columns, with reasons:
+- `Serial`: record identifier
+- `Indexno`: record identifier
+- `Year`: time field (not a clinical feature)
+- `Month`: time field (not a clinical feature)
+- `Hospital`: care setting (not a clinical feature)
+- `ICU`: care setting (not a clinical feature)
+- `OPD`: care setting (not a clinical feature)
+- `Ethnicity`: socio-demographic or household field (kept out to keep the model focused on exposure and symptoms)
+- `Income`: socio-demographic or household field (kept out to keep the model focused on exposure and symptoms)
+- `Education`: socio-demographic or household field (kept out to keep the model focused on exposure and symptoms)
+- `TertiaryEducation`: socio-demographic or household field (kept out to keep the model focused on exposure and symptoms)
+- `Prophylactics`: socio-demographic or household field (kept out to keep the model focused on exposure and symptoms)
+- `Pasttreatments`: socio-demographic or household field (kept out to keep the model focused on exposure and symptoms)
+- `Pastantibiotics`: socio-demographic or household field (kept out to keep the model focused on exposure and symptoms)
+- `Headache2`: day-by-day series (time-varying, follows admission; not used)
+- `Headache3`: day-by-day series (time-varying, follows admission; not used)
+- `Headache4`: day-by-day series (time-varying, follows admission; not used)
+- `Headache5`: day-by-day series (time-varying, follows admission; not used)
+- `Headache6`: day-by-day series (time-varying, follows admission; not used)
+- `Headache7`: day-by-day series (time-varying, follows admission; not used)
+- `Headache8`: day-by-day series (time-varying, follows admission; not used)
+- `Headache9`: day-by-day series (time-varying, follows admission; not used)
+- `Headache10`: day-by-day series (time-varying, follows admission; not used)
+- `Fever2`: day-by-day series (time-varying, follows admission; not used)
+- `Fever3`: day-by-day series (time-varying, follows admission; not used)
+- `Fever4`: day-by-day series (time-varying, follows admission; not used)
+- `Fever5`: day-by-day series (time-varying, follows admission; not used)
+- `Fever6`: day-by-day series (time-varying, follows admission; not used)
+- `Fever7`: day-by-day series (time-varying, follows admission; not used)
+- `Fever8`: day-by-day series (time-varying, follows admission; not used)
+- `Fever9`: day-by-day series (time-varying, follows admission; not used)
+- `Fever10`: day-by-day series (time-varying, follows admission; not used)
+- `Chills2`: day-by-day series (time-varying, follows admission; not used)
+- `Chills3`: day-by-day series (time-varying, follows admission; not used)
+- `Chills4`: day-by-day series (time-varying, follows admission; not used)
+- `Chills5`: day-by-day series (time-varying, follows admission; not used)
+- `Chills6`: day-by-day series (time-varying, follows admission; not used)
+- `Chills7`: day-by-day series (time-varying, follows admission; not used)
+- `Chills8`: day-by-day series (time-varying, follows admission; not used)
+- `Chills9`: day-by-day series (time-varying, follows admission; not used)
+- `Chills10`: day-by-day series (time-varying, follows admission; not used)
+- `Rigors2`: day-by-day series (time-varying, follows admission; not used)
+- `Rigors3`: day-by-day series (time-varying, follows admission; not used)
+- `Rigors4`: day-by-day series (time-varying, follows admission; not used)
+- `Rigors5`: day-by-day series (time-varying, follows admission; not used)
+- `Rigors6`: day-by-day series (time-varying, follows admission; not used)
+- `Rigors7`: day-by-day series (time-varying, follows admission; not used)
+- `Rigors8`: day-by-day series (time-varying, follows admission; not used)
+- `Rigors9`: day-by-day series (time-varying, follows admission; not used)
+- `Rigors10`: day-by-day series (time-varying, follows admission; not used)
+- `Musclepain2`: day-by-day series (time-varying, follows admission; not used)
+- `Musclepain3`: day-by-day series (time-varying, follows admission; not used)
+- `Musclepain4`: day-by-day series (time-varying, follows admission; not used)
+- `Musclepain5`: day-by-day series (time-varying, follows admission; not used)
+- `Musclepain6`: day-by-day series (time-varying, follows admission; not used)
+- `Musclepain7`: day-by-day series (time-varying, follows admission; not used)
+- `Musclepain8`: day-by-day series (time-varying, follows admission; not used)
+- `Musclepain9`: day-by-day series (time-varying, follows admission; not used)
+- `Musclepain10`: day-by-day series (time-varying, follows admission; not used)
+- `Mustender2`: day-by-day series (time-varying, follows admission; not used)
+- `Mustender3`: day-by-day series (time-varying, follows admission; not used)
+- `Mustender4`: day-by-day series (time-varying, follows admission; not used)
+- `Mustender5`: day-by-day series (time-varying, follows admission; not used)
+- `Mustender6`: day-by-day series (time-varying, follows admission; not used)
+- `Mustender7`: day-by-day series (time-varying, follows admission; not used)
+- `Mustender8`: day-by-day series (time-varying, follows admission; not used)
+- `Mustender9`: day-by-day series (time-varying, follows admission; not used)
+- `Mustender10`: day-by-day series (time-varying, follows admission; not used)
+- `Nausea2`: day-by-day series (time-varying, follows admission; not used)
+- `Nausea3`: day-by-day series (time-varying, follows admission; not used)
+- `Nausea4`: day-by-day series (time-varying, follows admission; not used)
+- `Nausea5`: day-by-day series (time-varying, follows admission; not used)
+- `Nausea6`: day-by-day series (time-varying, follows admission; not used)
+- `Nausea7`: day-by-day series (time-varying, follows admission; not used)
+- `Nausea8`: day-by-day series (time-varying, follows admission; not used)
+- `Nausea9`: day-by-day series (time-varying, follows admission; not used)
+- `Nausea10`: day-by-day series (time-varying, follows admission; not used)
+- `Vomiting2`: day-by-day series (time-varying, follows admission; not used)
+- `Vomiting3`: day-by-day series (time-varying, follows admission; not used)
+- `Vomiting4`: day-by-day series (time-varying, follows admission; not used)
+- `Vomiting5`: day-by-day series (time-varying, follows admission; not used)
+- `Vomiting6`: day-by-day series (time-varying, follows admission; not used)
+- `Vomiting7`: day-by-day series (time-varying, follows admission; not used)
+- `Vomiting8`: day-by-day series (time-varying, follows admission; not used)
+- `Vomiting9`: day-by-day series (time-varying, follows admission; not used)
+- `Vomiting10`: day-by-day series (time-varying, follows admission; not used)
+- `Consuf2`: day-by-day series (time-varying, follows admission; not used)
+- `Consuf3`: day-by-day series (time-varying, follows admission; not used)
+- `Consuf4`: day-by-day series (time-varying, follows admission; not used)
+- `Consuf5`: day-by-day series (time-varying, follows admission; not used)
+- `Consuf6`: day-by-day series (time-varying, follows admission; not used)
+- `Consuf7`: day-by-day series (time-varying, follows admission; not used)
+- `Consuf8`: day-by-day series (time-varying, follows admission; not used)
+- `Consuf9`: day-by-day series (time-varying, follows admission; not used)
+- `Consuf10`: day-by-day series (time-varying, follows admission; not used)
+- `Skinrash2`: day-by-day series (time-varying, follows admission; not used)
+- `Skinrash3`: day-by-day series (time-varying, follows admission; not used)
+- `Skinrash4`: day-by-day series (time-varying, follows admission; not used)
+- `Skinrash5`: day-by-day series (time-varying, follows admission; not used)
+- `Skinrash6`: day-by-day series (time-varying, follows admission; not used)
+- `Skinrash7`: day-by-day series (time-varying, follows admission; not used)
+- `Skinrash8`: day-by-day series (time-varying, follows admission; not used)
+- `Skinrash9`: day-by-day series (time-varying, follows admission; not used)
+- `Skinrash10`: day-by-day series (time-varying, follows admission; not used)
+- `Mucorash2`: day-by-day series (time-varying, follows admission; not used)
+- `Mucorash3`: day-by-day series (time-varying, follows admission; not used)
+- `Mucorash4`: day-by-day series (time-varying, follows admission; not used)
+- `Mucorash5`: day-by-day series (time-varying, follows admission; not used)
+- `Mucorash6`: day-by-day series (time-varying, follows admission; not used)
+- `Mucorash7`: day-by-day series (time-varying, follows admission; not used)
+- `Mucorash8`: day-by-day series (time-varying, follows admission; not used)
+- `Mucorash9`: day-by-day series (time-varying, follows admission; not used)
+- `Mucorash10`: day-by-day series (time-varying, follows admission; not used)
+- `Prostration2`: day-by-day series (time-varying, follows admission; not used)
+- `Prostration3`: day-by-day series (time-varying, follows admission; not used)
+- `Prostration4`: day-by-day series (time-varying, follows admission; not used)
+- `Prostration5`: day-by-day series (time-varying, follows admission; not used)
+- `Prostration6`: day-by-day series (time-varying, follows admission; not used)
+- `Prostration7`: day-by-day series (time-varying, follows admission; not used)
+- `Prostration8`: day-by-day series (time-varying, follows admission; not used)
+- `Prostration9`: day-by-day series (time-varying, follows admission; not used)
+- `Prostration10`: day-by-day series (time-varying, follows admission; not used)
+- `diarrhea2`: day-by-day series (time-varying, follows admission; not used)
+- `diarrhea3`: day-by-day series (time-varying, follows admission; not used)
+- `diarrhea4`: day-by-day series (time-varying, follows admission; not used)
+- `diarrhea5`: day-by-day series (time-varying, follows admission; not used)
+- `diarrhea6`: day-by-day series (time-varying, follows admission; not used)
+- `diarrhea7`: day-by-day series (time-varying, follows admission; not used)
+- `diarrhea8`: day-by-day series (time-varying, follows admission; not used)
+- `diarrhea9`: day-by-day series (time-varying, follows admission; not used)
+- `diarrhea10`: day-by-day series (time-varying, follows admission; not used)
+- `Oliguria2`: day-by-day series (time-varying, follows admission; not used)
+- `Oliguria3`: day-by-day series (time-varying, follows admission; not used)
+- `Oliguria4`: day-by-day series (time-varying, follows admission; not used)
+- `Oliguria5`: day-by-day series (time-varying, follows admission; not used)
+- `Oliguria6`: day-by-day series (time-varying, follows admission; not used)
+- `Oliguria7`: day-by-day series (time-varying, follows admission; not used)
+- `Oliguria8`: day-by-day series (time-varying, follows admission; not used)
+- `Oliguria9`: day-by-day series (time-varying, follows admission; not used)
+- `Oliguria10`: day-by-day series (time-varying, follows admission; not used)
+- `Anuria2`: day-by-day series (time-varying, follows admission; not used)
+- `Anuria3`: day-by-day series (time-varying, follows admission; not used)
+- `Anuria4`: day-by-day series (time-varying, follows admission; not used)
+- `Anuria5`: day-by-day series (time-varying, follows admission; not used)
+- `Anuria6`: day-by-day series (time-varying, follows admission; not used)
+- `Anuria7`: day-by-day series (time-varying, follows admission; not used)
+- `Anuria8`: day-by-day series (time-varying, follows admission; not used)
+- `Anuria9`: day-by-day series (time-varying, follows admission; not used)
+- `Anuria10`: day-by-day series (time-varying, follows admission; not used)
+- `Jaundice2`: day-by-day series (time-varying, follows admission; not used)
+- `Jaundice3`: day-by-day series (time-varying, follows admission; not used)
+- `Jaundice4`: day-by-day series (time-varying, follows admission; not used)
+- `Jaundice5`: day-by-day series (time-varying, follows admission; not used)
+- `Jaundice6`: day-by-day series (time-varying, follows admission; not used)
+- `Jaundice7`: day-by-day series (time-varying, follows admission; not used)
+- `Jaundice8`: day-by-day series (time-varying, follows admission; not used)
+- `Jaundice9`: day-by-day series (time-varying, follows admission; not used)
+- `Jaundice10`: day-by-day series (time-varying, follows admission; not used)
+- `hepatictender2`: day-by-day series (time-varying, follows admission; not used)
+- `hepatictender3`: day-by-day series (time-varying, follows admission; not used)
+- `hepatictender4`: day-by-day series (time-varying, follows admission; not used)
+- `hepatictender5`: day-by-day series (time-varying, follows admission; not used)
+- `hepatictender6`: day-by-day series (time-varying, follows admission; not used)
+- `hepatictender7`: day-by-day series (time-varying, follows admission; not used)
+- `hepatictender8`: day-by-day series (time-varying, follows admission; not used)
+- `hepatictender9`: day-by-day series (time-varying, follows admission; not used)
+- `hepatictender10`: day-by-day series (time-varying, follows admission; not used)
+- `hepatomegaly2`: day-by-day series (time-varying, follows admission; not used)
+- `hepatomegaly3`: day-by-day series (time-varying, follows admission; not used)
+- `hepatomegaly4`: day-by-day series (time-varying, follows admission; not used)
+- `hepatomegaly5`: day-by-day series (time-varying, follows admission; not used)
+- `hepatomegaly6`: day-by-day series (time-varying, follows admission; not used)
+- `hepatomegaly7`: day-by-day series (time-varying, follows admission; not used)
+- `hepatomegaly8`: day-by-day series (time-varying, follows admission; not used)
+- `hepatomegaly9`: day-by-day series (time-varying, follows admission; not used)
+- `hepatomegaly10`: day-by-day series (time-varying, follows admission; not used)
+- `Spleenomegaly2`: day-by-day series (time-varying, follows admission; not used)
+- `Spleenomegaly3`: day-by-day series (time-varying, follows admission; not used)
+- `Spleenomegaly4`: day-by-day series (time-varying, follows admission; not used)
+- `Spleenomegaly5`: day-by-day series (time-varying, follows admission; not used)
+- `Spleenomegaly6`: day-by-day series (time-varying, follows admission; not used)
+- `Spleenomegaly7`: day-by-day series (time-varying, follows admission; not used)
+- `Spleenomegaly8`: day-by-day series (time-varying, follows admission; not used)
+- `Spleenomegaly9`: day-by-day series (time-varying, follows admission; not used)
+- `Spleenomegaly10`: day-by-day series (time-varying, follows admission; not used)
+- `Lymphadenopathy2`: day-by-day series (time-varying, follows admission; not used)
+- `Lymphadenopathy3`: day-by-day series (time-varying, follows admission; not used)
+- `Lymphadenopathy4`: day-by-day series (time-varying, follows admission; not used)
+- `Lymphadenopathy5`: day-by-day series (time-varying, follows admission; not used)
+- `Lymphadenopathy6`: day-by-day series (time-varying, follows admission; not used)
+- `Lymphadenopathy7`: day-by-day series (time-varying, follows admission; not used)
+- `Lymphadenopathy8`: day-by-day series (time-varying, follows admission; not used)
+- `Lymphadenopathy9`: day-by-day series (time-varying, follows admission; not used)
+- `Lymphadenopathy10`: day-by-day series (time-varying, follows admission; not used)
+- `Photophobia2`: day-by-day series (time-varying, follows admission; not used)
+- `Photophobia3`: day-by-day series (time-varying, follows admission; not used)
+- `Photophobia4`: day-by-day series (time-varying, follows admission; not used)
+- `Photophobia5`: day-by-day series (time-varying, follows admission; not used)
+- `Photophobia6`: day-by-day series (time-varying, follows admission; not used)
+- `Photophobia7`: day-by-day series (time-varying, follows admission; not used)
+- `Photophobia8`: day-by-day series (time-varying, follows admission; not used)
+- `Photophobia9`: day-by-day series (time-varying, follows admission; not used)
+- `Photophobia10`: day-by-day series (time-varying, follows admission; not used)
+- `Neckstiffness2`: day-by-day series (time-varying, follows admission; not used)
+- `Neckstiffness3`: day-by-day series (time-varying, follows admission; not used)
+- `Neckstiffness4`: day-by-day series (time-varying, follows admission; not used)
+- `Neckstiffness5`: day-by-day series (time-varying, follows admission; not used)
+- `Neckstiffness6`: day-by-day series (time-varying, follows admission; not used)
+- `Neckstiffness7`: day-by-day series (time-varying, follows admission; not used)
+- `Neckstiffness8`: day-by-day series (time-varying, follows admission; not used)
+- `Neckstiffness9`: day-by-day series (time-varying, follows admission; not used)
+- `Neckstiffness10`: day-by-day series (time-varying, follows admission; not used)
+- `Confusion2`: day-by-day series (time-varying, follows admission; not used)
+- `Confusion3`: day-by-day series (time-varying, follows admission; not used)
+- `Confusion4`: day-by-day series (time-varying, follows admission; not used)
+- `Confusion5`: day-by-day series (time-varying, follows admission; not used)
+- `Confusion6`: day-by-day series (time-varying, follows admission; not used)
+- `Confusion7`: day-by-day series (time-varying, follows admission; not used)
+- `Confusion8`: day-by-day series (time-varying, follows admission; not used)
+- `Confusion9`: day-by-day series (time-varying, follows admission; not used)
+- `Confusion10`: day-by-day series (time-varying, follows admission; not used)
+- `Cough2`: day-by-day series (time-varying, follows admission; not used)
+- `Cough3`: day-by-day series (time-varying, follows admission; not used)
+- `Cough4`: day-by-day series (time-varying, follows admission; not used)
+- `Cough5`: day-by-day series (time-varying, follows admission; not used)
+- `Cough6`: day-by-day series (time-varying, follows admission; not used)
+- `Cough7`: day-by-day series (time-varying, follows admission; not used)
+- `Cough8`: day-by-day series (time-varying, follows admission; not used)
+- `Cough9`: day-by-day series (time-varying, follows admission; not used)
+- `Cough10`: day-by-day series (time-varying, follows admission; not used)
+- `Haemoptysis2`: day-by-day series (time-varying, follows admission; not used)
+- `Haemoptysis3`: day-by-day series (time-varying, follows admission; not used)
+- `Haemoptysis4`: day-by-day series (time-varying, follows admission; not used)
+- `Haemoptysis5`: day-by-day series (time-varying, follows admission; not used)
+- `Haemoptysis6`: day-by-day series (time-varying, follows admission; not used)
+- `Haemoptysis7`: day-by-day series (time-varying, follows admission; not used)
+- `Haemoptysis8`: day-by-day series (time-varying, follows admission; not used)
+- `Haemoptysis9`: day-by-day series (time-varying, follows admission; not used)
+- `Haemoptysis10`: day-by-day series (time-varying, follows admission; not used)
+- `SOB2`: day-by-day series (time-varying, follows admission; not used)
+- `SOB3`: day-by-day series (time-varying, follows admission; not used)
+- `SOB4`: day-by-day series (time-varying, follows admission; not used)
+- `SOB5`: day-by-day series (time-varying, follows admission; not used)
+- `SOB6`: day-by-day series (time-varying, follows admission; not used)
+- `SOB7`: day-by-day series (time-varying, follows admission; not used)
+- `SOB8`: day-by-day series (time-varying, follows admission; not used)
+- `SOB9`: day-by-day series (time-varying, follows admission; not used)
+- `SOB10`: day-by-day series (time-varying, follows admission; not used)
+- `Chestpain2`: day-by-day series (time-varying, follows admission; not used)
+- `Chestpain3`: day-by-day series (time-varying, follows admission; not used)
+- `Chestpain4`: day-by-day series (time-varying, follows admission; not used)
+- `Chestpain5`: day-by-day series (time-varying, follows admission; not used)
+- `Chestpain6`: day-by-day series (time-varying, follows admission; not used)
+- `Chestpain7`: day-by-day series (time-varying, follows admission; not used)
+- `Chestpain8`: day-by-day series (time-varying, follows admission; not used)
+- `Chestpain9`: day-by-day series (time-varying, follows admission; not used)
+- `Chestpain10`: day-by-day series (time-varying, follows admission; not used)
+- `Pulserate2`: day-by-day series (time-varying, follows admission; not used)
+- `Pulserate3`: day-by-day series (time-varying, follows admission; not used)
+- `Pulserate4`: day-by-day series (time-varying, follows admission; not used)
+- `Pulserate5`: day-by-day series (time-varying, follows admission; not used)
+- `Pulserate6`: day-by-day series (time-varying, follows admission; not used)
+- `Pulserate7`: day-by-day series (time-varying, follows admission; not used)
+- `Pulserate8`: day-by-day series (time-varying, follows admission; not used)
+- `Pulserate9`: day-by-day series (time-varying, follows admission; not used)
+- `Pulserate10`: day-by-day series (time-varying, follows admission; not used)
+- `SBP2`: day-by-day series (time-varying, follows admission; not used)
+- `DBP2`: day-by-day series (time-varying, follows admission; not used)
+- `SBP3`: day-by-day series (time-varying, follows admission; not used)
+- `DBP3`: day-by-day series (time-varying, follows admission; not used)
+- `SBP4`: day-by-day series (time-varying, follows admission; not used)
+- `DBP4`: day-by-day series (time-varying, follows admission; not used)
+- `SBP5`: day-by-day series (time-varying, follows admission; not used)
+- `DBP5`: day-by-day series (time-varying, follows admission; not used)
+- `SBP6`: day-by-day series (time-varying, follows admission; not used)
+- `DBP6`: day-by-day series (time-varying, follows admission; not used)
+- `SBP7`: day-by-day series (time-varying, follows admission; not used)
+- `DBP7`: day-by-day series (time-varying, follows admission; not used)
+- `SBP8`: day-by-day series (time-varying, follows admission; not used)
+- `DBP8`: day-by-day series (time-varying, follows admission; not used)
+- `SBP9`: day-by-day series (time-varying, follows admission; not used)
+- `DBP9`: day-by-day series (time-varying, follows admission; not used)
+- `SBP10`: day-by-day series (time-varying, follows admission; not used)
+- `DBP10`: day-by-day series (time-varying, follows admission; not used)
+- `Bleeding2`: day-by-day series (time-varying, follows admission; not used)
+- `Bleeding3`: day-by-day series (time-varying, follows admission; not used)
+- `Bleeding4`: day-by-day series (time-varying, follows admission; not used)
+- `Bleeding5`: day-by-day series (time-varying, follows admission; not used)
+- `Bleeding6`: day-by-day series (time-varying, follows admission; not used)
+- `Bleeding7`: day-by-day series (time-varying, follows admission; not used)
+- `Bleeding8`: day-by-day series (time-varying, follows admission; not used)
+- `Bleeding9`: day-by-day series (time-varying, follows admission; not used)
+- `Bleeding10`: day-by-day series (time-varying, follows admission; not used)
+- `WBCcount`: laboratory variable (not used as a feature)
+- `Ncount`: laboratory variable (not used as a feature)
+- `N`: laboratory variable (not used as a feature)
+- `Lcount`: laboratory variable (not used as a feature)
+- `L`: laboratory variable (not used as a feature)
+- `Plateletcount`: laboratory variable (not used as a feature)
+- `PCV`: laboratory variable (not used as a feature)
+- `RBC`: laboratory variable (not used as a feature)
+- `CRP`: laboratory variable (not used as a feature)
+- `ESR`: laboratory variable (not used as a feature)
+- `Puscells`: laboratory variable (not used as a feature)
+- `Redcells`: laboratory variable (not used as a feature)
+- `Leucocytes`: laboratory variable (not used as a feature)
+- `Granularcast`: laboratory variable (not used as a feature)
+- `Albumin`: laboratory variable (not used as a feature)
+- `Na`: laboratory variable (not used as a feature)
+- `K`: laboratory variable (not used as a feature)
+- `AST`: laboratory variable (not used as a feature)
+- `ALT`: laboratory variable (not used as a feature)
+- `T.Bilirubin`: laboratory variable (not used as a feature)
+- `D.Bilirubin`: laboratory variable (not used as a feature)
+- `@GT`: laboratory variable (not used as a feature)
+- `S.creatinine`: laboratory variable (not used as a feature)
+- `B.urea`: laboratory variable (not used as a feature)
+- `Samylase`: laboratory variable (not used as a feature)
+- `Sphosphate`: laboratory variable (not used as a feature)
+- `ALP`: laboratory variable (not used as a feature)
+- `PulseRate`: laboratory variable (not used as a feature)
+- `PulseRhythem`: laboratory variable (not used as a feature)
+- `WBC_first_day`: laboratory variable (not used as a feature)
+- `WBCCount1`: day-by-day series (time-varying, follows admission; not used)
+- `WBCcount2`: day-by-day series (time-varying, follows admission; not used)
+- `WBCcount3`: day-by-day series (time-varying, follows admission; not used)
+- `WBCcount4`: day-by-day series (time-varying, follows admission; not used)
+- `WBCcount5`: day-by-day series (time-varying, follows admission; not used)
+- `WBCcount6`: day-by-day series (time-varying, follows admission; not used)
+- `WBCcount7`: day-by-day series (time-varying, follows admission; not used)
+- `WBCcount8`: day-by-day series (time-varying, follows admission; not used)
+- `WBCcount9`: day-by-day series (time-varying, follows admission; not used)
+- `WBCcount10`: day-by-day series (time-varying, follows admission; not used)
+- `Ncount2`: day-by-day series (time-varying, follows admission; not used)
+- `Ncount3`: day-by-day series (time-varying, follows admission; not used)
+- `Ncount4`: day-by-day series (time-varying, follows admission; not used)
+- `Ncount5`: day-by-day series (time-varying, follows admission; not used)
+- `Ncount6`: day-by-day series (time-varying, follows admission; not used)
+- `Ncount7`: day-by-day series (time-varying, follows admission; not used)
+- `Ncount8`: day-by-day series (time-varying, follows admission; not used)
+- `Ncount9`: day-by-day series (time-varying, follows admission; not used)
+- `Ncount10`: day-by-day series (time-varying, follows admission; not used)
+- `N2`: day-by-day series (time-varying, follows admission; not used)
+- `N3`: day-by-day series (time-varying, follows admission; not used)
+- `N4`: day-by-day series (time-varying, follows admission; not used)
+- `N5`: day-by-day series (time-varying, follows admission; not used)
+- `N6`: day-by-day series (time-varying, follows admission; not used)
+- `N7`: day-by-day series (time-varying, follows admission; not used)
+- `N8`: day-by-day series (time-varying, follows admission; not used)
+- `N9`: day-by-day series (time-varying, follows admission; not used)
+- `N10`: day-by-day series (time-varying, follows admission; not used)
+- `Lcount2`: day-by-day series (time-varying, follows admission; not used)
+- `Lcount3`: day-by-day series (time-varying, follows admission; not used)
+- `Lcount4`: day-by-day series (time-varying, follows admission; not used)
+- `Lcount5`: day-by-day series (time-varying, follows admission; not used)
+- `Lcount6`: day-by-day series (time-varying, follows admission; not used)
+- `Lcount7`: day-by-day series (time-varying, follows admission; not used)
+- `Lcount8`: day-by-day series (time-varying, follows admission; not used)
+- `Lcount9`: day-by-day series (time-varying, follows admission; not used)
+- `Lcount10`: day-by-day series (time-varying, follows admission; not used)
+- `L2`: day-by-day series (time-varying, follows admission; not used)
+- `L3`: day-by-day series (time-varying, follows admission; not used)
+- `L4`: day-by-day series (time-varying, follows admission; not used)
+- `L5`: day-by-day series (time-varying, follows admission; not used)
+- `L6`: day-by-day series (time-varying, follows admission; not used)
+- `L7`: day-by-day series (time-varying, follows admission; not used)
+- `L8`: day-by-day series (time-varying, follows admission; not used)
+- `L9`: day-by-day series (time-varying, follows admission; not used)
+- `L10`: day-by-day series (time-varying, follows admission; not used)
+- `Platelet2`: day-by-day series (time-varying, follows admission; not used)
+- `Platelet3`: day-by-day series (time-varying, follows admission; not used)
+- `Platelet4`: day-by-day series (time-varying, follows admission; not used)
+- `Platelet5`: day-by-day series (time-varying, follows admission; not used)
+- `Platelet6`: day-by-day series (time-varying, follows admission; not used)
+- `Platelet7`: day-by-day series (time-varying, follows admission; not used)
+- `Platelet8`: day-by-day series (time-varying, follows admission; not used)
+- `Platelet9`: day-by-day series (time-varying, follows admission; not used)
+- `Platelet10`: day-by-day series (time-varying, follows admission; not used)
+- `PCV2`: day-by-day series (time-varying, follows admission; not used)
+- `PCV3`: day-by-day series (time-varying, follows admission; not used)
+- `PCV4`: day-by-day series (time-varying, follows admission; not used)
+- `PCV5`: day-by-day series (time-varying, follows admission; not used)
+- `PCV6`: day-by-day series (time-varying, follows admission; not used)
+- `PCV7`: day-by-day series (time-varying, follows admission; not used)
+- `PCV8`: day-by-day series (time-varying, follows admission; not used)
+- `PCV9`: day-by-day series (time-varying, follows admission; not used)
+- `PCV10`: day-by-day series (time-varying, follows admission; not used)
+- `RBC2`: day-by-day series (time-varying, follows admission; not used)
+- `RBC3`: day-by-day series (time-varying, follows admission; not used)
+- `RBC4`: day-by-day series (time-varying, follows admission; not used)
+- `RBC5`: day-by-day series (time-varying, follows admission; not used)
+- `RBC6`: day-by-day series (time-varying, follows admission; not used)
+- `RBC7`: day-by-day series (time-varying, follows admission; not used)
+- `RBC8`: day-by-day series (time-varying, follows admission; not used)
+- `RBC9`: day-by-day series (time-varying, follows admission; not used)
+- `RBC10`: day-by-day series (time-varying, follows admission; not used)
+- `CRP2`: day-by-day series (time-varying, follows admission; not used)
+- `CRP3`: day-by-day series (time-varying, follows admission; not used)
+- `CRP4`: day-by-day series (time-varying, follows admission; not used)
+- `CRP5`: day-by-day series (time-varying, follows admission; not used)
+- `CRP6`: day-by-day series (time-varying, follows admission; not used)
+- `CRP7`: day-by-day series (time-varying, follows admission; not used)
+- `CRP8`: day-by-day series (time-varying, follows admission; not used)
+- `CRP9`: day-by-day series (time-varying, follows admission; not used)
+- `CRP10`: day-by-day series (time-varying, follows admission; not used)
+- `ESR2`: day-by-day series (time-varying, follows admission; not used)
+- `ESR3`: day-by-day series (time-varying, follows admission; not used)
+- `ESR4`: day-by-day series (time-varying, follows admission; not used)
+- `ESR5`: day-by-day series (time-varying, follows admission; not used)
+- `ESR6`: day-by-day series (time-varying, follows admission; not used)
+- `ESR7`: day-by-day series (time-varying, follows admission; not used)
+- `ESR8`: day-by-day series (time-varying, follows admission; not used)
+- `ESR9`: day-by-day series (time-varying, follows admission; not used)
+- `ESR10`: day-by-day series (time-varying, follows admission; not used)
+- `Puscells2`: day-by-day series (time-varying, follows admission; not used)
+- `Puscells3`: day-by-day series (time-varying, follows admission; not used)
+- `Puscells4`: day-by-day series (time-varying, follows admission; not used)
+- `Puscells5`: day-by-day series (time-varying, follows admission; not used)
+- `Puscells6`: day-by-day series (time-varying, follows admission; not used)
+- `Puscells7`: day-by-day series (time-varying, follows admission; not used)
+- `Puscells8`: day-by-day series (time-varying, follows admission; not used)
+- `Puscells9`: day-by-day series (time-varying, follows admission; not used)
+- `Puscells10`: day-by-day series (time-varying, follows admission; not used)
+- `Redcells2`: day-by-day series (time-varying, follows admission; not used)
+- `Redcells3`: day-by-day series (time-varying, follows admission; not used)
+- `Redcells4`: day-by-day series (time-varying, follows admission; not used)
+- `Redcells5`: day-by-day series (time-varying, follows admission; not used)
+- `Redcells6`: day-by-day series (time-varying, follows admission; not used)
+- `Redcells7`: day-by-day series (time-varying, follows admission; not used)
+- `Redcells8`: day-by-day series (time-varying, follows admission; not used)
+- `Redcells9`: day-by-day series (time-varying, follows admission; not used)
+- `Redcells10`: day-by-day series (time-varying, follows admission; not used)
+- `Albumin2`: day-by-day series (time-varying, follows admission; not used)
+- `Albumin3`: day-by-day series (time-varying, follows admission; not used)
+- `Albumin4`: day-by-day series (time-varying, follows admission; not used)
+- `Albumin5`: day-by-day series (time-varying, follows admission; not used)
+- `Albumin6`: day-by-day series (time-varying, follows admission; not used)
+- `Albumin7`: day-by-day series (time-varying, follows admission; not used)
+- `Albumin8`: day-by-day series (time-varying, follows admission; not used)
+- `Albumin9`: day-by-day series (time-varying, follows admission; not used)
+- `Albumin10`: day-by-day series (time-varying, follows admission; not used)
+- `Na2`: day-by-day series (time-varying, follows admission; not used)
+- `Na3`: day-by-day series (time-varying, follows admission; not used)
+- `Na4`: day-by-day series (time-varying, follows admission; not used)
+- `Na5`: day-by-day series (time-varying, follows admission; not used)
+- `Na6`: day-by-day series (time-varying, follows admission; not used)
+- `Na7`: day-by-day series (time-varying, follows admission; not used)
+- `Na8`: day-by-day series (time-varying, follows admission; not used)
+- `Na9`: day-by-day series (time-varying, follows admission; not used)
+- `Na10`: day-by-day series (time-varying, follows admission; not used)
+- `K2`: day-by-day series (time-varying, follows admission; not used)
+- `K3`: day-by-day series (time-varying, follows admission; not used)
+- `K4`: day-by-day series (time-varying, follows admission; not used)
+- `K5`: day-by-day series (time-varying, follows admission; not used)
+- `K6`: day-by-day series (time-varying, follows admission; not used)
+- `K7`: day-by-day series (time-varying, follows admission; not used)
+- `K8`: day-by-day series (time-varying, follows admission; not used)
+- `K9`: day-by-day series (time-varying, follows admission; not used)
+- `K10`: day-by-day series (time-varying, follows admission; not used)
+- `AST2`: day-by-day series (time-varying, follows admission; not used)
+- `AST3`: day-by-day series (time-varying, follows admission; not used)
+- `AST4`: day-by-day series (time-varying, follows admission; not used)
+- `AST5`: day-by-day series (time-varying, follows admission; not used)
+- `AST6`: day-by-day series (time-varying, follows admission; not used)
+- `AST7`: day-by-day series (time-varying, follows admission; not used)
+- `AST8`: day-by-day series (time-varying, follows admission; not used)
+- `AST9`: day-by-day series (time-varying, follows admission; not used)
+- `AST10`: day-by-day series (time-varying, follows admission; not used)
+- `ALT2`: day-by-day series (time-varying, follows admission; not used)
+- `ALT3`: day-by-day series (time-varying, follows admission; not used)
+- `ALT4`: day-by-day series (time-varying, follows admission; not used)
+- `ALT5`: day-by-day series (time-varying, follows admission; not used)
+- `ALT6`: day-by-day series (time-varying, follows admission; not used)
+- `ALT7`: day-by-day series (time-varying, follows admission; not used)
+- `ALT8`: day-by-day series (time-varying, follows admission; not used)
+- `ALT9`: day-by-day series (time-varying, follows admission; not used)
+- `ALT10`: day-by-day series (time-varying, follows admission; not used)
+- `T.Bilirub2`: day-by-day series (time-varying, follows admission; not used)
+- `T.Bilirub3`: day-by-day series (time-varying, follows admission; not used)
+- `T.Bilirub4`: day-by-day series (time-varying, follows admission; not used)
+- `T.Bilirub5`: day-by-day series (time-varying, follows admission; not used)
+- `T.Bilirub6`: day-by-day series (time-varying, follows admission; not used)
+- `T.Bilirub7`: day-by-day series (time-varying, follows admission; not used)
+- `T.Bilirub8`: day-by-day series (time-varying, follows admission; not used)
+- `T.Bilirub9`: day-by-day series (time-varying, follows admission; not used)
+- `T.Bilirub10`: day-by-day series (time-varying, follows admission; not used)
+- `D.Bilirub2`: day-by-day series (time-varying, follows admission; not used)
+- `D.Bilirub3`: day-by-day series (time-varying, follows admission; not used)
+- `D.Bilirub4`: day-by-day series (time-varying, follows admission; not used)
+- `D.Bilirub5`: day-by-day series (time-varying, follows admission; not used)
+- `D.Bilirub6`: day-by-day series (time-varying, follows admission; not used)
+- `D.Bilirub7`: day-by-day series (time-varying, follows admission; not used)
+- `D.Bilirub8`: day-by-day series (time-varying, follows admission; not used)
+- `D.Bilirub9`: day-by-day series (time-varying, follows admission; not used)
+- `D.Bilirub10`: day-by-day series (time-varying, follows admission; not used)
+- `GT2`: day-by-day series (time-varying, follows admission; not used)
+- `GT3`: day-by-day series (time-varying, follows admission; not used)
+- `GT4`: day-by-day series (time-varying, follows admission; not used)
+- `GT5`: day-by-day series (time-varying, follows admission; not used)
+- `GT6`: day-by-day series (time-varying, follows admission; not used)
+- `GT7`: day-by-day series (time-varying, follows admission; not used)
+- `GT8`: day-by-day series (time-varying, follows admission; not used)
+- `GT9`: day-by-day series (time-varying, follows admission; not used)
+- `GT10`: day-by-day series (time-varying, follows admission; not used)
+- `S.Cr2`: day-by-day series (time-varying, follows admission; not used)
+- `S.Cr3`: day-by-day series (time-varying, follows admission; not used)
+- `S.Cr4`: day-by-day series (time-varying, follows admission; not used)
+- `S.Cr5`: day-by-day series (time-varying, follows admission; not used)
+- `S.Cr6`: day-by-day series (time-varying, follows admission; not used)
+- `S.Cr7`: day-by-day series (time-varying, follows admission; not used)
+- `S.Cr8`: day-by-day series (time-varying, follows admission; not used)
+- `S.Cr9`: day-by-day series (time-varying, follows admission; not used)
+- `S.Cr10`: day-by-day series (time-varying, follows admission; not used)
+- `B.Urea2`: day-by-day series (time-varying, follows admission; not used)
+- `B.Urea3`: day-by-day series (time-varying, follows admission; not used)
+- `B.Urea4`: day-by-day series (time-varying, follows admission; not used)
+- `B.Urea5`: day-by-day series (time-varying, follows admission; not used)
+- `B.Urea6`: day-by-day series (time-varying, follows admission; not used)
+- `B.Urea7`: day-by-day series (time-varying, follows admission; not used)
+- `B.Urea8`: day-by-day series (time-varying, follows admission; not used)
+- `B.Urea9`: day-by-day series (time-varying, follows admission; not used)
+- `B.Urea10`: day-by-day series (time-varying, follows admission; not used)
+- `S.amylase2`: day-by-day series (time-varying, follows admission; not used)
+- `S.amylase3`: day-by-day series (time-varying, follows admission; not used)
+- `S.amylase4`: day-by-day series (time-varying, follows admission; not used)
+- `S.amylase5`: day-by-day series (time-varying, follows admission; not used)
+- `S.amylase6`: day-by-day series (time-varying, follows admission; not used)
+- `S.amylase7`: day-by-day series (time-varying, follows admission; not used)
+- `S.amylase8`: day-by-day series (time-varying, follows admission; not used)
+- `S.amylase9`: day-by-day series (time-varying, follows admission; not used)
+- `S.amylase10`: day-by-day series (time-varying, follows admission; not used)
+- `S.phosphate2`: day-by-day series (time-varying, follows admission; not used)
+- `S.phosphate3`: day-by-day series (time-varying, follows admission; not used)
+- `S.phosphate4`: day-by-day series (time-varying, follows admission; not used)
+- `S.phosphate5`: day-by-day series (time-varying, follows admission; not used)
+- `S.phosphate6`: day-by-day series (time-varying, follows admission; not used)
+- `S.phosphate7`: day-by-day series (time-varying, follows admission; not used)
+- `S.phosphate8`: day-by-day series (time-varying, follows admission; not used)
+- `S.phosphate9`: day-by-day series (time-varying, follows admission; not used)
+- `S.phosphate10`: day-by-day series (time-varying, follows admission; not used)
+- `ALP2`: day-by-day series (time-varying, follows admission; not used)
+- `ALP3`: day-by-day series (time-varying, follows admission; not used)
+- `ALP4`: day-by-day series (time-varying, follows admission; not used)
+- `ALP5`: day-by-day series (time-varying, follows admission; not used)
+- `ALP6`: day-by-day series (time-varying, follows admission; not used)
+- `ALP7`: day-by-day series (time-varying, follows admission; not used)
+- `ALP8`: day-by-day series (time-varying, follows admission; not used)
+- `ALP9`: day-by-day series (time-varying, follows admission; not used)
+- `ALP10`: day-by-day series (time-varying, follows admission; not used)
+- `WPqPCRDiagnosis`: microbiological or serological result (defines the diagnosis)
+- `UrineqPCRDiagnosis`: microbiological or serological result (defines the diagnosis)
+- `CultureqPCRDia`: microbiological or serological result (defines the diagnosis)
+- `SerumqPCRDiagnosis`: microbiological or serological result (defines the diagnosis)
+- `UFqPCRDiag`: microbiological or serological result (defines the diagnosis)
+- `Isolate`: microbiological or serological result (defines the diagnosis)
+- `MAT_set_1`: microbiological or serological result (defines the diagnosis)
+- `Pomona`: microbiological or serological result (defines the diagnosis)
+- `Bratislava`: microbiological or serological result (defines the diagnosis)
+- `Canicola`: microbiological or serological result (defines the diagnosis)
+- `Icterohaemorrhagiae`: microbiological or serological result (defines the diagnosis)
+- `Mankarso`: microbiological or serological result (defines the diagnosis)
+- `Georgia`: microbiological or serological result (defines the diagnosis)
+- `Pyrogene`: microbiological or serological result (defines the diagnosis)
+- `Bataviae`: microbiological or serological result (defines the diagnosis)
+- `Wolfii`: microbiological or serological result (defines the diagnosis)
+- `Geyaweera`: microbiological or serological result (defines the diagnosis)
+- `Weerasinghe`: microbiological or serological result (defines the diagnosis)
+- `Ceylonica`: microbiological or serological result (defines the diagnosis)
+- `Alice`: microbiological or serological result (defines the diagnosis)
+- `Patoc`: microbiological or serological result (defines the diagnosis)
+- `Autumnalis`: microbiological or serological result (defines the diagnosis)
+- `Alex`: microbiological or serological result (defines the diagnosis)
+- `Ballum`: microbiological or serological result (defines the diagnosis)
+- `Djasiman`: microbiological or serological result (defines the diagnosis)
+- `Australis`: microbiological or serological result (defines the diagnosis)
+- `Tarassovi`: microbiological or serological result (defines the diagnosis)
+- `Ratnapura`: microbiological or serological result (defines the diagnosis)
+- `Borincana`: microbiological or serological result (defines the diagnosis)
+- `Celledoni`: microbiological or serological result (defines the diagnosis)
+- `Grippotyphosa`: microbiological or serological result (defines the diagnosis)
+- `PomonaF`: laboratory variable (not used as a feature)
+- `BratislavaF`: laboratory variable (not used as a feature)
+- `CanicolaF`: laboratory variable (not used as a feature)
+- `IcterohaemorrhagiaeF`: laboratory variable (not used as a feature)
+- `MankarsoF`: laboratory variable (not used as a feature)
+- `GeorgiaF`: laboratory variable (not used as a feature)
+- `PyrogeneF`: laboratory variable (not used as a feature)
+- `BataviaeF`: laboratory variable (not used as a feature)
+- `WolfiiF`: laboratory variable (not used as a feature)
+- `GeyaweeraF`: laboratory variable (not used as a feature)
+- `WeerasingheF`: laboratory variable (not used as a feature)
+- `CeylonicaF`: laboratory variable (not used as a feature)
+- `AliceF`: laboratory variable (not used as a feature)
+- `PatocF`: laboratory variable (not used as a feature)
+- `AutumnalisF`: laboratory variable (not used as a feature)
+- `AlexF`: laboratory variable (not used as a feature)
+- `BallumF`: laboratory variable (not used as a feature)
+- `DjasimanF`: laboratory variable (not used as a feature)
+- `AustralisF`: laboratory variable (not used as a feature)
+- `TarassoviF`: laboratory variable (not used as a feature)
+- `RatnapuraF`: laboratory variable (not used as a feature)
+- `BorincanaF`: laboratory variable (not used as a feature)
+- `CelledoniF`: laboratory variable (not used as a feature)
+- `GrippotyphosaF`: laboratory variable (not used as a feature)
+- `Acu_L.interrogansserovarBratislavastr.JezBratislava`: laboratory variable (not used as a feature)
+- `Acu_L.interrogansserovarAutumnalisstr.AkiyamiA`: laboratory variable (not used as a feature)
+- `Acu_L.weiliiserovarCelledonistr.Celledoni`: laboratory variable (not used as a feature)
+- `Acu_L.interrogansserovarCanicolastr.Ruebush`: laboratory variable (not used as a feature)
+- `Acu_L.interrogansserovarIcterohaemorrhagiaestr.RGA`: laboratory variable (not used as a feature)
+- `Acu_L.interrogansserovarMankarsostr.Mankarso`: laboratory variable (not used as a feature)
+- `Acu_L.santarosaiserovarGeorgiastr.LT117`: day-by-day series (time-varying, follows admission; not used)
+- `Acu_L.santarosaiserovarPyrogenesstr.Salinem`: laboratory variable (not used as a feature)
+- `Acu_L.interrogansserovarBataviaestr.VanTienan`: laboratory variable (not used as a feature)
+- `Acu_L.interrogansserovarAlexistr.616`: day-by-day series (time-varying, follows admission; not used)
+- `Acu_L.interrogansserovarAustralisstr.Ballico`: laboratory variable (not used as a feature)
+- `Acu_L.interrogansserovarwolfiistr.3705`: day-by-day series (time-varying, follows admission; not used)
+- `Acu_L.interrogansserovarWeerasinghe`: laboratory variable (not used as a feature)
+- `Acu_Patoc`: laboratory variable (not used as a feature)
+- `FU_L.interrogansserovarBratislavastr.JezBratislava`: laboratory variable (not used as a feature)
+- `FU_L.interrogansserovarAutumnalisstr.AkiyamiA`: laboratory variable (not used as a feature)
+- `FU_L.weiliiserovarCelledonistr.Celledoni`: laboratory variable (not used as a feature)
+- `FU_L.interrogansserovarCanicolastr.Ruebush`: laboratory variable (not used as a feature)
+- `FU_L.interrogansserovarIcterohaemorrhagiaestr.RGA`: laboratory variable (not used as a feature)
+- `FU_L.interrogansserovarMankarsostr.Mankarso`: laboratory variable (not used as a feature)
+- `FU_L.santarosaiserovarGeorgiastr.LT117`: day-by-day series (time-varying, follows admission; not used)
+- `FU_L.santarosaiserovarPyrogenesstr.Salinem`: laboratory variable (not used as a feature)
+- `FU_L.interrogansserovarBataviaestr.VanTienan`: laboratory variable (not used as a feature)
+- `FU_L.interrogansserovarAlexistr.616`: day-by-day series (time-varying, follows admission; not used)
+- `FU_L.interrogansserovarAustralisstr.Ballico`: laboratory variable (not used as a feature)
+- `FU_L.interrogansserovarwolfiistr.3705`: day-by-day series (time-varying, follows admission; not used)
+- `FU_L.interrogansserovarWeerasinghe`: laboratory variable (not used as a feature)
+- `FU_Patoc`: laboratory variable (not used as a feature)
+- `Final`: microbiological or serological result (defines the diagnosis)
+- `Usualdrinkingwatersource` (model-level): 70% missing or constant
+- `Usualbathingwatersource` (model-level): 70% missing or constant
+- `Sourceofwaterforhousehold` (model-level): 70% missing or constant
+- `Garbagedisposalprocedure` (model-level): 71% missing or constant
+- `Accumilationofrefusal` (model-level): 70% missing or constant
+- `Availabilityofpublicgarbagecollectionprocedure` (model-level): 72% missing or constant
+- `HomeStreamrivercanaloranyotherrunningwatersource` (model-level): 71% missing or constant
+- `WorkplaceStreamrivercanaloranyotherrunningwatersource` (model-level): 76% missing or constant
+- `Homepondlaketankoranyotherstagnantwatersource` (model-level): 71% missing or constant
+- `WorkPlacepondlaketankoranyotherstagnantwatersource` (model-level): 76% missing or constant
+- `Homemarshywetland` (model-level): 72% missing or constant
+- `Workplacemarshywet` (model-level): 76% missing or constant
+- `HomeBushes` (model-level): 72% missing or constant
+- `Workplacebushes` (model-level): 76% missing or constant
+- `Homeforest` (model-level): 72% missing or constant
+- `Workplaceforest` (model-level): 76% missing or constant
+- `Homeworkingpaddyfield` (model-level): 72% missing or constant
+- `WorkPlaceworkingpaddyfield` (model-level): 76% missing or constant
+- `Homeabondantpaddyfield` (model-level): 71% missing or constant
+- `Workplaceabondantpaddyfield` (model-level): 76% missing or constant
+- `Homeotheragricultural` (model-level): 72% missing or constant
+- `workplaceotheragricultural` (model-level): 77% missing or constant
+- `Homeanimalfarm` (model-level): 72% missing or constant
+- `Workplaceanimalfarm` (model-level): 76% missing or constant
+- `Homegarbageaccumilation` (model-level): 72% missing or constant
+- `Workplacegarbageaccumilation` (model-level): 76% missing or constant
+- `Homeblockeddrainage` (model-level): 72% missing or constant
+- `Workplaceblockeddrainage` (model-level): 77% missing or constant
+- `Homesewer` (model-level): 73% missing or constant
+- `Workplacesewer` (model-level): 77% missing or constant
+- `Rathome` (model-level): 71% missing or constant
+- `RatWorkplace` (model-level): 77% missing or constant
+- `RatNeighbourhood` (model-level): 74% missing or constant
+- `Cathome` (model-level): 72% missing or constant
+- `Catworkplace` (model-level): 77% missing or constant
+- `CatNeighbourhood` (model-level): 73% missing or constant
+- `Doghome` (model-level): 72% missing or constant
+- `DogWorkplace` (model-level): 77% missing or constant
+- `DogNeighbourhood` (model-level): 73% missing or constant
+- `Cattlehome` (model-level): 72% missing or constant
+- `CattleWorkplace` (model-level): 77% missing or constant
+- `CattleNeighbourhood` (model-level): 73% missing or constant
+- `PigHome` (model-level): 72% missing or constant
+- `PigWorkplace` (model-level): 76% missing or constant
+- `PigNeighbourhood` (model-level): 73% missing or constant
+- `GoatHome` (model-level): 72% missing or constant
+- `GoatWorkplace` (model-level): 77% missing or constant
+- `GoatNeighbourhood` (model-level): 73% missing or constant
+- `Urumeeyahome` (model-level): 72% missing or constant
+- `Urumeeyaworkplace` (model-level): 77% missing or constant
+- `UrimeeyaNeighbourhood` (model-level): 74% missing or constant
+- `OtherrhodentsHome` (model-level): 80% missing or constant
+- `OtherRhoddentsWorkplace` (model-level): 83% missing or constant
+- `OtherRhodentsNeighbourhood` (model-level): 81% missing or constant
+- `OtherHome` (model-level): 83% missing or constant
+- `OtherWorkplace` (model-level): 86% missing or constant
+- `OtherNeighbourhood` (model-level): 84% missing or constant
+- `Marshlandexposure` (model-level): 69% missing or constant
+- `Marshlandexposurefrequency` (model-level): 97% missing or constant
+- `MarshlandexposureDuration` (model-level): 96% missing or constant
+- `Wetsoilexposure` (model-level): 70% missing or constant
+- `wetsoilfrequency` (model-level): 94% missing or constant
+- `wetsoilduration` (model-level): 94% missing or constant
+- `Floodexposure` (model-level): 69% missing or constant
+- `Floodfrequency` (model-level): 99% missing or constant
+- `Floodduration` (model-level): 99% missing or constant
+- `Forestexposure` (model-level): 69% missing or constant
+- `Forestfrequency` (model-level): 97% missing or constant
+- `forestduration` (model-level): 97% missing or constant
+- `BushesExposure` (model-level): 69% missing or constant
+- `Bushesfrequency` (model-level): 97% missing or constant
+- `BushesDuration` (model-level): 97% missing or constant
+- `Otheragriexposure` (model-level): 69% missing or constant
+- `Otheragrifrequency` (model-level): 96% missing or constant
+- `Otheragriduration` (model-level): 96% missing or constant
+- `Gardeningexposure` (model-level): 69% missing or constant
+- `Gardeningfrequency` (model-level): 95% missing or constant
+- `Gardeningduration` (model-level): 94% missing or constant
+- `Otheroutdoorworkexposure` (model-level): 70% missing or constant
+- `Otheroutdoorworkfrequency` (model-level): 98% missing or constant
+- `Otheroutdoorworkduration` (model-level): 98% missing or constant
+- `Naturalrunningwaterexposure` (model-level): 69% missing or constant
+- `Naturalrunningfrequency` (model-level): 96% missing or constant
+- `Naturalrunningduration` (model-level): 95% missing or constant
+- `Stagnantwaterexposure` (model-level): 69% missing or constant
+- `Stagnantwaterfrequency` (model-level): 96% missing or constant
+- `Stagnantwaterduration` (model-level): 96% missing or constant
+- `Manmaderunningwaterexposure` (model-level): 69% missing or constant
+- `Manmaderunningwaterfrequency` (model-level): 99% missing or constant
+- `Manmaderunningwaterduration` (model-level): 98% missing or constant
+- `Drainsexposure` (model-level): 69% missing or constant
+- `Drainsfrequency` (model-level): 99% missing or constant
+- `Drainsduration` (model-level): 99% missing or constant
+- `Otherwaterexposure` (model-level): 70% missing or constant
+- `Otherwaterfrequency` (model-level): 99% missing or constant
+- `Otherwaterduration` (model-level): 99% missing or constant
+- `Paddyfieldexposure` (model-level): 69% missing or constant
+- `Paddyfieldfrequency` (model-level): 93% missing or constant
+- `Paddyfieldduration` (model-level): 93% missing or constant
+- `Newlycultivatedfield` (model-level): 88% missing or constant
+- `Apartoflargefield` (model-level): 87% missing or constant
+- `Usebiffalos` (model-level): 87% missing or constant
+- `Wellmaintained` (model-level): 87% missing or constant
+- `Harvestbothmonsoons` (model-level): 87% missing or constant
+- `Ratmiceabondant` (model-level): 88% missing or constant
+- `Sourseofwaterforpaddyfield` (model-level): 90% missing or constant
+- `Walkingbarefootoutdoor` (model-level): 74% missing or constant
+- `CattleHandle` (model-level): 71% missing or constant
+- `BuffaloHandle` (model-level): 70% missing or constant
+- `Goathandle` (model-level): 70% missing or constant
+- `Pighandle` (model-level): 70% missing or constant
+- `Cathandle` (model-level): 71% missing or constant
+- `Doghandle` (model-level): 71% missing or constant
+- `PRad` (model-level): 57% missing or constant
+- `SBPadd` (model-level): 57% missing or constant
+- `DBPadd` (model-level): 57% missing or constant
+
+## Method
+1. Rows with a missing label are removed. Columns over 50% missing or constant are dropped.
+2. A stratified 75/25 train/test split, fixed seed 42. The test set is not used for model choice.
+3. Logistic regression, random forest, and XGBoost are compared by 5-fold stratified CV ROC AUC on the
+   training split only. The best is refit on the full training split.
+4. The test set is scored once. 95% CIs come from 1,000 bootstrap resamples of the test set.
+5. Missing values are imputed (median for numeric, most-frequent for categorical). Categorical values are one-hot encoded.
+   Unseen categories at prediction time are ignored.
+
+| Candidate | CV ROC AUC (mean ± sd, training split only) |
+|---|---|
+| logistic_regression | 0.581 ± 0.036 |
+| random_forest | 0.588 ± 0.035 |
+| xgboost **(selected)** | 0.597 ± 0.038 |
+
+Selected algorithm: **xgboost**. Versions: scikit-learn 1.6.1, xgboost 3.4.1.
+
+## Results (held-out test set)
+| Metric (held-out test set) | Value |
+|---|---|
+| ROC AUC | 0.614 (95% CI 0.557–0.669) |
+| PR AUC | 0.444 |
+| Sensitivity (recall, positive class) | 0.169 |
+| Specificity | 0.895 |
+| PPV | 0.455 |
+| NPV | 0.675 |
+| Balanced accuracy | 0.532 |
+| F1 | 0.246 |
+| Brier score (lower is better) | 0.221 |
+
+At a 0.5 threshold on the test set: TN 256, FP 30, FN 123, TP 25. Positive class: 1.
+
+These are estimates on one public dataset and one split. They are not a measure of how the model would perform
+in a clinic, in another country, or on another population. Confidence intervals are wide when a class is small.
+
+## Limitations
+- MAT serology, PCR results, culture, isolates and all day-by-day laboratory series are excluded (they define the diagnosis).
+- Hospital-based cohort from Sri Lanka (study period not checked against the source paper). Exposure answers come from patient recall.
+- The model reflects the populations, sites, and time periods in its source data. Distribution shift is expected.
+- Predictions are probabilities of a label in the source dataset. They are not diagnoses.
+- No fairness audit has been run. Sex, age, and site effects have not been tested for bias.
+- The source dataset licence or permission must be confirmed before any public redistribution (see the dataset entry).
+
+## Files
+- `model.joblib`: fitted pipeline (preprocessing and estimator), feature names, and class order
+- `feature_spec.json`: feature names, types, and defaults for the API and UI
+- `metrics.json`: every number in this card
+- `MODEL_CARD.md`: this file
+
+## Reproduce
+```
+python ml/download_data.py
+python ml/prepare_datasets.py
+python ml/train_models.py {key}
+python ml/write_model_cards.py
+```
